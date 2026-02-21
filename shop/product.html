@@ -54,6 +54,16 @@
         <span></span>
       </button>
     </div>
+
+    <!-- Crypto Tickers -->
+    <div class="ticker-bar">
+      <div class="ticker-row">
+        <div class="livecoinwatch-widget-5" lcw-base="USD" lcw-color-tx="#ffffff" lcw-marquee-1="coins" lcw-marquee-2="coins" lcw-marquee-items="20"></div>
+      </div>
+      <div class="ticker-row">
+        <gecko-coin-price-marquee-widget locale="en" dark-mode="true" outlined="true" transparent-background="true" coin-ids="near,aurora-near,bitcoin,memdex100,solana,dogecoin,shiba-inu,pepe" initial-currency="usd"></gecko-coin-price-marquee-widget>
+      </div>
+    </div>
   </nav>
 
   <!-- Mobile Menu -->
@@ -241,5 +251,7 @@
   <script async src="https://cdn.snipcart.com/themes/v3/snipcart.js"
     data-api-key="YOUR_SNIPCART_API_KEY"></script>
   <div hidden id="snipcart" data-api-key="YOUR_SNIPCART_API_KEY"></div>
+  <script src="https://widgets.coingecko.com/gecko-coin-price-marquee-widget.js"></script>
+  <script defer src="https://www.livecoinwatch.com/static/lcw-widget.js"></script>
 </body>
 </html>

@@ -4,6 +4,50 @@
    ============================================ */
 
 /* =============================================
+   CRYPTO TICKER BAR (inside nav)
+   ============================================= */
+.ticker-bar {
+  width: 100%;
+  background: rgba(3, 9, 30, 0.6);
+  border-top: 1px solid rgba(0, 41, 254, 0.12);
+  overflow: hidden;
+  padding-top: var(--space-md);
+}
+
+.ticker-row {
+  line-height: 1;
+}
+
+.ticker-row gecko-coin-price-marquee-widget,
+.ticker-row .livecoinwatch-widget-5 {
+  display: block;
+}
+
+/* Mobile tickers — compact with glassmorphism */
+@media (max-width: 768px) {
+  .ticker-bar {
+    padding-top: var(--space-xs);
+    padding-bottom: var(--space-xs);
+    background: linear-gradient(
+      135deg,
+      rgba(13, 28, 87, 0.5) 0%,
+      rgba(0, 1, 47, 0.4) 50%,
+      rgba(14, 80, 153, 0.25) 100%
+    );
+    backdrop-filter: blur(20px) saturate(1.4);
+    -webkit-backdrop-filter: blur(20px) saturate(1.4);
+    border-top: 1px solid rgba(32, 158, 224, 0.12);
+  }
+
+  .ticker-row {
+    font-size: 0.75rem;
+    transform: scale(0.85);
+    transform-origin: center;
+    overflow: hidden;
+  }
+}
+
+/* =============================================
    NAVIGATION
    ============================================= */
 .nav {
@@ -12,9 +56,9 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  height: var(--nav-height);
+  height: auto;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   /* Glassmorphism */
   background: linear-gradient(
     135deg,
@@ -61,7 +105,8 @@
   width: 100%;
   max-width: var(--max-width-wide);
   margin: 0 auto;
-  padding: 0 var(--space-lg);
+  padding: var(--space-lg) var(--space-xl);
+  min-height: var(--nav-height);
 }
 
 /* Nav Logo */
@@ -73,13 +118,13 @@
 }
 
 .nav-logo img {
-  height: 40px;
+  height: 56px;
   width: auto;
 }
 
 .nav-logo-text {
   font-family: var(--font-heading);
-  font-size: 1.25rem;
+  font-size: 1.75rem;
   font-weight: 700;
   color: var(--color-text-primary);
   white-space: nowrap;
@@ -98,7 +143,7 @@
 }
 
 .nav-link {
-  font-size: 0.9rem;
+  font-size: 1.15rem;
   font-weight: 500;
   color: var(--color-text-secondary);
   transition: color var(--transition-fast);
@@ -142,6 +187,7 @@
   height: 30px;
   cursor: pointer;
   z-index: 1010;
+  margin-right: var(--space-md);
 }
 
 .hamburger span {
@@ -255,7 +301,7 @@
   }
 }
 
-/* Body padding to offset fixed nav */
+/* Body padding to offset fixed nav (set dynamically by main.js) */
 body {
   padding-top: var(--nav-height);
 }

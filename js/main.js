@@ -5,6 +5,20 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  // ========== Nav Height (menu + tickers) ==========
+  const navEl = document.querySelector('.nav');
+  if (navEl) {
+    const updateNavPadding = () => {
+      const h = navEl.offsetHeight;
+      document.body.style.paddingTop = h + 'px';
+    };
+    updateNavPadding();
+    setTimeout(updateNavPadding, 500);
+    setTimeout(updateNavPadding, 1500);
+    setTimeout(updateNavPadding, 3000);
+    window.addEventListener('resize', updateNavPadding, { passive: true });
+  }
+
   // ========== Sticky Navigation ==========
   const nav = document.querySelector('.nav');
   if (nav) {

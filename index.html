@@ -49,6 +49,16 @@
         <span></span>
       </button>
     </div>
+
+    <!-- Crypto Tickers -->
+    <div class="ticker-bar">
+      <div class="ticker-row">
+        <div class="livecoinwatch-widget-5" lcw-base="USD" lcw-color-tx="#ffffff" lcw-marquee-1="coins" lcw-marquee-2="coins" lcw-marquee-items="20"></div>
+      </div>
+      <div class="ticker-row">
+        <gecko-coin-price-marquee-widget locale="en" dark-mode="true" outlined="true" transparent-background="true" coin-ids="near,aurora-near,bitcoin,memdex100,solana,dogecoin,shiba-inu,pepe" initial-currency="usd"></gecko-coin-price-marquee-widget>
+      </div>
+    </div>
   </nav>
 
   <!-- Mobile Menu -->
@@ -72,7 +82,7 @@
 
     <!-- Hero Section -->
     <section id="hero" class="section pt-0" style="background: linear-gradient(180deg, #03091E 0%, #00012F 50%, #0D1C57 100%); position: relative; overflow: hidden;">
-      <div class="container" style="padding-top: 4rem; padding-bottom: 4rem;">
+      <div class="container" style="padding-top: 6rem; padding-bottom: 4rem;">
         <div class="grid grid-2" style="gap: 3rem; align-items: center;">
           <div class="reveal-stagger">
             <div class="badge mb-lg">More than a memecoin</div>
@@ -350,8 +360,12 @@
   <!-- Back to Top -->
   <button class="back-to-top" aria-label="Back to top">&#8593;</button>
 
-  <!-- CoinGecko Widget -->
+  <!-- CoinGecko Widgets -->
   <script src="https://widgets.coingecko.com/gecko-coin-price-chart-widget.js"></script>
+  <script src="https://widgets.coingecko.com/gecko-coin-price-marquee-widget.js"></script>
+
+  <!-- LiveCoinWatch Widget -->
+  <script defer src="https://www.livecoinwatch.com/static/lcw-widget.js"></script>
 
   <!-- Scripts -->
   <script src="js/main.js"></script>
