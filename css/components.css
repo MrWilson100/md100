@@ -15,7 +15,7 @@
 }
 
 .ticker-row {
-  line-height: 1;
+  line-height: 0;
 }
 
 .ticker-row gecko-coin-price-marquee-widget,
@@ -23,11 +23,14 @@
   display: block;
 }
 
-/* Mobile tickers — compact with glassmorphism */
+.ticker-row + .ticker-row {
+  margin-top: -4px;
+}
+
+/* Mobile tickers — full-width with glassmorphism */
 @media (max-width: 768px) {
   .ticker-bar {
-    padding-top: var(--space-xs);
-    padding-bottom: var(--space-xs);
+    padding: var(--space-xs) 0;
     background: linear-gradient(
       135deg,
       rgba(13, 28, 87, 0.5) 0%,
@@ -40,10 +43,11 @@
   }
 
   .ticker-row {
-    font-size: 0.75rem;
-    transform: scale(0.85);
-    transform-origin: center;
+    width: 100%;
     overflow: hidden;
+    line-height: 0;
+    margin-top: -2px;
+    margin-bottom: -2px;
   }
 }
 
@@ -284,6 +288,11 @@
 }
 
 @media (max-width: 768px) {
+  .nav-inner {
+    padding: var(--space-sm) var(--space-md);
+    min-height: auto;
+  }
+
   .nav-links {
     display: none;
   }

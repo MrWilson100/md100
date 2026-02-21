@@ -271,6 +271,11 @@ small {
   .section {
     padding: var(--space-xl) 0;
   }
+
+  /* Reduce hero top padding on mobile */
+  #hero > .container {
+    padding-top: 1.5rem !important;
+  }
 }
 
 @media (max-width: 640px) {
