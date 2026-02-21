@@ -1,0 +1,245 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <!-- Brick wall texture pattern -->
+    <pattern id="bricks" x="0" y="0" width="100" height="50" patternUnits="userSpaceOnUse">
+      <rect width="100" height="50" fill="#1a1a2e"/>
+      <rect x="0" y="0" width="48" height="23" rx="1" fill="#16162a" stroke="#0f0f20" stroke-width="0.8"/>
+      <rect x="52" y="0" width="48" height="23" rx="1" fill="#181830" stroke="#0f0f20" stroke-width="0.8"/>
+      <rect x="25" y="27" width="48" height="23" rx="1" fill="#171729" stroke="#0f0f20" stroke-width="0.8"/>
+      <rect x="77" y="27" width="23" height="23" rx="1" fill="#19192e" stroke="#0f0f20" stroke-width="0.8"/>
+      <rect x="0" y="27" width="23" height="23" rx="1" fill="#15152b" stroke="#0f0f20" stroke-width="0.8"/>
+    </pattern>
+
+    <!-- Spray paint spatter filter -->
+    <filter id="spray" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" seed="2" result="noise"/>
+      <feColorMatrix type="saturate" values="0" in="noise" result="grayNoise"/>
+      <feComponentTransfer in="grayNoise" result="mask">
+        <feFuncA type="discrete" tableValues="0 0 0 0 0 1 1 1 1 1"/>
+      </feComponentTransfer>
+      <feComposite in="SourceGraphic" in2="mask" operator="in"/>
+    </filter>
+
+    <!-- Glow effect for neon look -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <!-- Heavy glow for accents -->
+    <filter id="glowStrong">
+      <feGaussianBlur stdDeviation="12" result="blur1"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Drip filter -->
+    <filter id="roughEdge">
+      <feTurbulence type="turbulence" baseFrequency="0.05" numOctaves="3" seed="5" result="turbulence"/>
+      <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="3" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+
+    <!-- Gradient for MEMDEX -->
+    <linearGradient id="memdexGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F9FBFC"/>
+      <stop offset="35%" stop-color="#C0C0C0"/>
+      <stop offset="65%" stop-color="#F9FBFC"/>
+      <stop offset="100%" stop-color="#8899BB"/>
+    </linearGradient>
+
+    <!-- Gradient for MERCH -->
+    <linearGradient id="merchGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0029FE"/>
+      <stop offset="30%" stop-color="#209EE0"/>
+      <stop offset="60%" stop-color="#007FD2"/>
+      <stop offset="100%" stop-color="#0E5099"/>
+    </linearGradient>
+
+    <!-- Chrome/silver outline gradient -->
+    <linearGradient id="chrome" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="30%" stop-color="#888899"/>
+      <stop offset="50%" stop-color="#ccccdd"/>
+      <stop offset="70%" stop-color="#666677"/>
+      <stop offset="100%" stop-color="#ffffff"/>
+    </linearGradient>
+
+    <!-- Subtle vignette -->
+    <radialGradient id="vignette" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="transparent"/>
+      <stop offset="100%" stop-color="rgba(0,0,0,0.5)"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background: dark brick wall -->
+  <rect width="800" height="600" fill="url(#bricks)"/>
+
+  <!-- Wall grime / weathering overlay -->
+  <rect width="800" height="600" fill="url(#vignette)" opacity="0.7"/>
+
+  <!-- Random spray splatters in background -->
+  <!-- Blue splatter top-left -->
+  <circle cx="120" cy="90" r="45" fill="#0029FE" opacity="0.12" filter="url(#spray)"/>
+  <circle cx="140" cy="110" r="30" fill="#209EE0" opacity="0.08" filter="url(#spray)"/>
+
+  <!-- Silver splatter bottom-right -->
+  <circle cx="680" cy="480" r="50" fill="#C0C0C0" opacity="0.1" filter="url(#spray)"/>
+  <circle cx="710" cy="510" r="35" fill="#8899BB" opacity="0.08" filter="url(#spray)"/>
+
+  <!-- Navy splatter mid-right -->
+  <circle cx="700" cy="150" r="40" fill="#00012F" opacity="0.15" filter="url(#spray)"/>
+
+  <!-- Small accent splatters -->
+  <circle cx="80" cy="420" r="20" fill="#0029FE" opacity="0.15" filter="url(#spray)"/>
+  <circle cx="600" cy="80" r="25" fill="#007FD2" opacity="0.1" filter="url(#spray)"/>
+  <circle cx="200" cy="520" r="18" fill="#209EE0" opacity="0.1" filter="url(#spray)"/>
+
+  <!-- === MEMDEX main text === -->
+  <!-- Shadow layer -->
+  <text x="400" y="245" text-anchor="middle"
+    font-family="'Impact', 'Arial Black', sans-serif" font-size="150" font-weight="900"
+    fill="#000011" opacity="0.6"
+    transform="translate(5,5)" letter-spacing="8">MEMDEX</text>
+
+  <!-- Outer stroke / 3D depth -->
+  <text x="400" y="245" text-anchor="middle"
+    font-family="'Impact', 'Arial Black', sans-serif" font-size="150" font-weight="900"
+    fill="none" stroke="#00012F" stroke-width="12" letter-spacing="8"
+    paint-order="stroke">MEMDEX</text>
+
+  <!-- Chrome outline -->
+  <text x="400" y="245" text-anchor="middle"
+    font-family="'Impact', 'Arial Black', sans-serif" font-size="150" font-weight="900"
+    fill="none" stroke="url(#chrome)" stroke-width="4" letter-spacing="8"
+    paint-order="stroke">MEMDEX</text>
+
+  <!-- Main fill -->
+  <text x="400" y="245" text-anchor="middle"
+    font-family="'Impact', 'Arial Black', sans-serif" font-size="150" font-weight="900"
+    fill="url(#memdexGrad)" letter-spacing="8">MEMDEX</text>
+
+  <!-- Top highlight shine -->
+  <text x="400" y="245" text-anchor="middle"
+    font-family="'Impact', 'Arial Black', sans-serif" font-size="150" font-weight="900"
+    fill="rgba(255,255,255,0.15)" letter-spacing="8"
+    clip-path="inset(0 0 55% 0)">MEMDEX</text>
+
+  <!-- === MERCH graffiti text === -->
+  <!-- Shadow layer -->
+  <text x="400" y="400" text-anchor="middle"
+    font-family="'Impact', 'Arial Black', sans-serif" font-size="170" font-weight="900" font-style="italic"
+    fill="#000011" opacity="0.5"
+    transform="translate(4,4) rotate(-3, 400, 380)" letter-spacing="5">MERCH</text>
+
+  <!-- Deep outline -->
+  <text x="400" y="400" text-anchor="middle"
+    font-family="'Impact', 'Arial Black', sans-serif" font-size="170" font-weight="900" font-style="italic"
+    fill="none" stroke="#00012F" stroke-width="14" letter-spacing="5"
+    transform="rotate(-3, 400, 380)"
+    paint-order="stroke">MERCH</text>
+
+  <!-- Blue glow behind -->
+  <text x="400" y="400" text-anchor="middle"
+    font-family="'Impact', 'Arial Black', sans-serif" font-size="170" font-weight="900" font-style="italic"
+    fill="#0029FE" letter-spacing="5"
+    transform="rotate(-3, 400, 380)"
+    filter="url(#glowStrong)" opacity="0.5">MERCH</text>
+
+  <!-- Chrome outline -->
+  <text x="400" y="400" text-anchor="middle"
+    font-family="'Impact', 'Arial Black', sans-serif" font-size="170" font-weight="900" font-style="italic"
+    fill="none" stroke="url(#chrome)" stroke-width="3" letter-spacing="5"
+    transform="rotate(-3, 400, 380)"
+    paint-order="stroke">MERCH</text>
+
+  <!-- Main fill with blue gradient -->
+  <text x="400" y="400" text-anchor="middle"
+    font-family="'Impact', 'Arial Black', sans-serif" font-size="170" font-weight="900" font-style="italic"
+    fill="url(#merchGrad)" letter-spacing="5"
+    transform="rotate(-3, 400, 380)">MERCH</text>
+
+  <!-- === Paint drips from MERCH letters === -->
+  <!-- Drip from M -->
+  <rect x="215" y="405" width="5" height="55" rx="2.5" fill="#0029FE" opacity="0.8" filter="url(#roughEdge)"/>
+  <rect x="222" y="405" width="3" height="35" rx="1.5" fill="#209EE0" opacity="0.6" filter="url(#roughEdge)"/>
+
+  <!-- Drip from E -->
+  <rect x="340" y="395" width="4" height="65" rx="2" fill="#007FD2" opacity="0.7" filter="url(#roughEdge)"/>
+
+  <!-- Drip from R -->
+  <rect x="430" y="400" width="5" height="50" rx="2.5" fill="#0029FE" opacity="0.75" filter="url(#roughEdge)"/>
+  <rect x="438" y="400" width="3" height="30" rx="1.5" fill="#209EE0" opacity="0.5" filter="url(#roughEdge)"/>
+
+  <!-- Drip from C -->
+  <rect x="510" y="395" width="4" height="70" rx="2" fill="#0E5099" opacity="0.7" filter="url(#roughEdge)"/>
+
+  <!-- Drip from H -->
+  <rect x="590" y="390" width="5" height="45" rx="2.5" fill="#007FD2" opacity="0.65" filter="url(#roughEdge)"/>
+
+  <!-- === Decorative elements === -->
+
+  <!-- Underline swoosh -->
+  <path d="M 140 430 Q 300 460, 400 435 T 660 440" fill="none" stroke="#C0C0C0" stroke-width="3" opacity="0.5" stroke-linecap="round"/>
+  <path d="M 160 440 Q 310 465, 400 445 T 640 448" fill="none" stroke="#0029FE" stroke-width="2" opacity="0.3" stroke-linecap="round"/>
+
+  <!-- Stars / sparkles -->
+  <!-- Star 1 -->
+  <g transform="translate(130, 200)" opacity="0.8">
+    <line x1="0" y1="-12" x2="0" y2="12" stroke="#F9FBFC" stroke-width="2" stroke-linecap="round"/>
+    <line x1="-12" y1="0" x2="12" y2="0" stroke="#F9FBFC" stroke-width="2" stroke-linecap="round"/>
+    <line x1="-8" y1="-8" x2="8" y2="8" stroke="#F9FBFC" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="8" y1="-8" x2="-8" y2="8" stroke="#F9FBFC" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- Star 2 -->
+  <g transform="translate(680, 300)" opacity="0.6">
+    <line x1="0" y1="-10" x2="0" y2="10" stroke="#209EE0" stroke-width="2" stroke-linecap="round"/>
+    <line x1="-10" y1="0" x2="10" y2="0" stroke="#209EE0" stroke-width="2" stroke-linecap="round"/>
+    <line x1="-7" y1="-7" x2="7" y2="7" stroke="#209EE0" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="7" y1="-7" x2="-7" y2="7" stroke="#209EE0" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- Star 3 -->
+  <g transform="translate(650, 170)" opacity="0.5">
+    <line x1="0" y1="-8" x2="0" y2="8" stroke="#C0C0C0" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="-8" y1="0" x2="8" y2="0" stroke="#C0C0C0" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- Arrow accent bottom-left -->
+  <g transform="translate(100, 490) rotate(-15)" opacity="0.5">
+    <line x1="0" y1="0" x2="60" y2="0" stroke="#C0C0C0" stroke-width="3" stroke-linecap="round"/>
+    <line x1="45" y1="-12" x2="60" y2="0" stroke="#C0C0C0" stroke-width="3" stroke-linecap="round"/>
+    <line x1="45" y1="12" x2="60" y2="0" stroke="#C0C0C0" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <!-- Crown above MEMDEX -->
+  <g transform="translate(400, 80)" opacity="0.6">
+    <path d="M -50 30 L -50 0 L -25 15 L 0 -10 L 25 15 L 50 0 L 50 30 Z"
+      fill="none" stroke="#C0C0C0" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+    <circle cx="-50" cy="-5" r="4" fill="#C0C0C0"/>
+    <circle cx="0" cy="-15" r="4" fill="#F9FBFC"/>
+    <circle cx="50" cy="-5" r="4" fill="#C0C0C0"/>
+  </g>
+
+  <!-- Small tag/label bottom-right -->
+  <g transform="translate(610, 520)" opacity="0.45">
+    <rect x="0" y="0" width="120" height="35" rx="3" fill="none" stroke="#8899BB" stroke-width="1.5"/>
+    <text x="60" y="23" text-anchor="middle" font-family="'Courier New', monospace" font-size="13" fill="#8899BB" letter-spacing="3">EST. 2024</text>
+  </g>
+
+  <!-- Diagonal hash lines accent -->
+  <g opacity="0.15" stroke="#209EE0" stroke-width="1.5">
+    <line x1="50" y1="350" x2="80" y2="320"/>
+    <line x1="58" y1="350" x2="88" y2="320"/>
+    <line x1="66" y1="350" x2="96" y2="320"/>
+  </g>
+  <g opacity="0.15" stroke="#209EE0" stroke-width="1.5">
+    <line x1="700" y1="420" x2="730" y2="390"/>
+    <line x1="708" y1="420" x2="738" y2="390"/>
+    <line x1="716" y1="420" x2="746" y2="390"/>
+  </g>
+</svg>

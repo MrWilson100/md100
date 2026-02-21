@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Product Detail — MemDex100 Shop">
+  <meta name="theme-color" content="#03091E">
+  <title>Product — MemDex100 Shop</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/shop.css">
+
+  <!-- Snipcart -->
+  <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3/default/snipcart.css" />
+</head>
+<body>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo" aria-label="MemDex100 Home">
+        <img src="../assets/logos/memdex-logo.svg" alt="MemDex100 Logo" width="40" height="40" onerror="this.style.display='none'">
+        <span class="nav-logo-text">MEM<span>DEX</span>100</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="../index.html" class="nav-link">Home</a></li>
+        <li><a href="index.html" class="nav-link active">Merch</a></li>
+        <li><a href="../gmm.html" class="nav-link">GMM Show</a></li>
+        <li><a href="https://x.com/MemdexSociety" class="nav-link" target="_blank" rel="noopener noreferrer">X</a></li>
+        <li><a href="https://t.me/memdexfoundation" class="nav-link" target="_blank" rel="noopener noreferrer">Telegram</a></li>
+        <li><a href="#" class="nav-link">Whitepaper</a></li>
+        <li><a href="../about.html" class="nav-link">FAQ</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <button class="snipcart-checkout btn btn-primary btn-sm" aria-label="View Cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <span class="snipcart-items-count">0</span>
+        </button>
+      </div>
+
+      <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" aria-hidden="true">
+    <div class="mobile-menu-panel">
+      <a href="../index.html" class="mobile-menu-link">Home</a>
+      <a href="index.html" class="mobile-menu-link">Merch</a>
+      <a href="../gmm.html" class="mobile-menu-link">GMM Show</a>
+      <a href="https://x.com/MemdexSociety" class="mobile-menu-link" target="_blank" rel="noopener noreferrer">X</a>
+      <a href="https://t.me/memdexfoundation" class="mobile-menu-link" target="_blank" rel="noopener noreferrer">Telegram</a>
+      <a href="#" class="mobile-menu-link">Whitepaper</a>
+      <a href="../about.html" class="mobile-menu-link">FAQ</a>
+      <div class="mobile-menu-cta">
+        <button class="snipcart-checkout btn btn-primary btn-block">View Cart</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <main>
+    <section class="section">
+      <div class="container">
+
+        <!-- Breadcrumb -->
+        <nav class="product-breadcrumb mb-xl" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a>
+          <span class="product-breadcrumb-sep">/</span>
+          <a href="index.html">Shop</a>
+          <span class="product-breadcrumb-sep">/</span>
+          <span id="breadcrumb-product">Product</span>
+        </nav>
+
+        <!-- Product Detail -->
+        <div class="product-detail" id="product-detail">
+
+          <!-- Gallery -->
+          <div class="product-gallery reveal-left">
+            <div class="product-gallery-main">
+              <img id="product-main-image" src="../assets/products/placeholder.jpg" alt="Product image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27400%27 height=%27400%27%3E%3Crect fill=%27%230d2f4f%27 width=%27400%27 height=%27400%27/%3E%3Ctext fill=%27%238899AA%27 x=%27200%27 y=%27200%27 text-anchor=%27middle%27 dy=%27.3em%27 font-family=%27sans-serif%27 font-size=%2718%27%3ENo Image%3C/text%3E%3C/svg%3E'">
+            </div>
+            <div class="product-gallery-thumbs" id="product-thumbs">
+              <!-- Thumbnails populated by js/shop.js -->
+            </div>
+          </div>
+
+          <!-- Product Info -->
+          <div class="product-info reveal-right">
+            <h1 class="product-title" id="product-title">Product Name</h1>
+
+            <div class="product-price-display">
+              <span class="product-price-current" id="product-price">$0.00</span>
+            </div>
+
+            <div class="product-description" id="product-description">
+              <p>Product description coming soon...</p>
+            </div>
+
+            <!-- Variant Selector -->
+            <div class="variant-selector" id="variant-selector" style="display:none;">
+              <label>Select Variant</label>
+              <div class="variant-options" id="variant-options">
+                <!-- Populated by js/shop.js -->
+              </div>
+            </div>
+
+            <!-- Quantity -->
+            <div class="variant-selector">
+              <label>Quantity</label>
+              <div class="quantity-selector">
+                <button class="quantity-btn" id="qty-minus" aria-label="Decrease quantity">-</button>
+                <input type="number" class="quantity-input" id="qty-input" value="1" min="1" max="99" aria-label="Quantity">
+                <button class="quantity-btn" id="qty-plus" aria-label="Increase quantity">+</button>
+              </div>
+            </div>
+
+            <!-- Add to Cart -->
+            <div class="product-actions">
+              <button class="btn btn-primary btn-lg" id="add-to-cart">Add to Cart</button>
+            </div>
+
+            <!-- Meta -->
+            <div class="product-meta" id="product-meta">
+              <div class="product-meta-item">
+                <strong>SKU:</strong> <span id="product-sku">---</span>
+              </div>
+              <div class="product-meta-item">
+                <strong>Category:</strong> <span id="product-category">---</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Product Tabs -->
+        <div class="product-tabs reveal">
+          <div class="tabs">
+            <button class="tab active" data-tab="description-tab">Description</button>
+            <button class="tab" data-tab="specs-tab">Specifications</button>
+          </div>
+          <div class="tab-panel active" id="description-tab">
+            <div class="prose" id="product-full-description">
+              <p>Full product description coming soon...</p>
+            </div>
+          </div>
+          <div class="tab-panel" id="specs-tab">
+            <div class="prose" id="product-specs">
+              <p>Product specifications coming soon...</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Related Products -->
+        <div class="related-products reveal">
+          <h2>You May Also Like</h2>
+          <div class="product-grid" id="related-products">
+            <!-- Populated by js/shop.js -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="../assets/logos/memdex-logo.svg" alt="MemDex100" width="36" height="36" onerror="this.style.display='none'">
+            <span class="footer-logo-text">MemDex100</span>
+          </div>
+          <p>$MEMDEX — the community memecoin with real utility. Our team is building the MemDex Automated Portfolio.</p>
+          <div class="social-links mt-lg">
+            <a href="https://x.com/MemdexSociety" class="social-link" aria-label="Twitter MemdexSociety" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../gmm.html">GMM</a></li>
+            <li><a href="index.html">Shop</a></li>
+            <li><a href="../coffee.html">Coffee</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul class="footer-links">
+            <li><a href="https://www.coingecko.com/en/coins/memdex100" target="_blank" rel="noopener noreferrer">CoinGecko</a></li>
+            <li><a href="https://bondfinance.io/memdex-ai-powered-portfolio-management/" target="_blank" rel="noopener noreferrer">Bond Finance</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul class="footer-links">
+            <li><a href="../terms.html">Terms of Service</a></li>
+            <li><a href="../privacy.html">Privacy Policy</a></li>
+            <li><a href="../refund.html">Refund Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copyright">&copy; <span class="current-year">2026</span> MemDex100. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="../terms.html">Terms</a>
+          <a href="../privacy.html">Privacy</a>
+          <a href="../refund.html">Refunds</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Back to top">&#8593;</button>
+
+  <!-- Scripts -->
+  <script src="../js/main.js"></script>
+  <script src="../js/animations.js"></script>
+  <script src="../js/shop.js"></script>
+
+  <!-- Snipcart -->
+  <script async src="https://cdn.snipcart.com/themes/v3/snipcart.js"
+    data-api-key="YOUR_SNIPCART_API_KEY"></script>
+  <div hidden id="snipcart" data-api-key="YOUR_SNIPCART_API_KEY"></div>
+</body>
+</html>

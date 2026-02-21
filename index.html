@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="$MEMDEX — The community memecoin with real utility. The team behind $MEMDEX is building the MemDex Automated Portfolio — AI-powered diversification across 100 digital assets.">
+  <meta name="theme-color" content="#03091E">
+  <title>$MEMDEX — Community Memecoin with Real Utility</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="MemDex100 Home">
+        <img src="assets/logos/memdex-logo.svg" alt="MemDex100 Logo" width="40" height="40" onerror="this.style.display='none'">
+        <span class="nav-logo-text">MEM<span>DEX</span>100</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link active">Home</a></li>
+        <li><a href="shop/index.html" class="nav-link">Merch</a></li>
+        <li><a href="gmm.html" class="nav-link">GMM Show</a></li>
+        <li><a href="https://x.com/MemdexSociety" class="nav-link" target="_blank" rel="noopener noreferrer">X</a></li>
+        <li><a href="https://t.me/memdexfoundation" class="nav-link" target="_blank" rel="noopener noreferrer">Telegram</a></li>
+        <li><a href="#" class="nav-link">Whitepaper</a></li>
+        <li><a href="about.html" class="nav-link">FAQ</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <a href="shop/index.html" class="btn btn-icon" aria-label="Shopping Cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        </a>
+      </div>
+
+      <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" aria-hidden="true">
+    <div class="mobile-menu-panel">
+      <a href="index.html" class="mobile-menu-link">Home</a>
+      <a href="shop/index.html" class="mobile-menu-link">Merch</a>
+      <a href="gmm.html" class="mobile-menu-link">GMM Show</a>
+      <a href="https://x.com/MemdexSociety" class="mobile-menu-link" target="_blank" rel="noopener noreferrer">X</a>
+      <a href="https://t.me/memdexfoundation" class="mobile-menu-link" target="_blank" rel="noopener noreferrer">Telegram</a>
+      <a href="#" class="mobile-menu-link">Whitepaper</a>
+      <a href="about.html" class="mobile-menu-link">FAQ</a>
+      <div class="mobile-menu-cta">
+        <a href="shop/index.html" class="btn btn-primary btn-block">View Cart</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <main>
+
+    <!-- Hero Section -->
+    <section id="hero" class="section pt-0" style="background: linear-gradient(180deg, #03091E 0%, #00012F 50%, #0D1C57 100%); position: relative; overflow: hidden;">
+      <div class="container" style="padding-top: 4rem; padding-bottom: 4rem;">
+        <div class="grid grid-2" style="gap: 3rem; align-items: center;">
+          <div class="reveal-stagger">
+            <div class="badge mb-lg">More than a memecoin</div>
+            <h1 class="mb-lg">
+              <span class="text-gradient">Join the Revolution</span><br>
+              Community Run<br>
+              Utility Based
+            </h1>
+
+            <!-- Contract Address -->
+            <div class="card mb-xl" style="background: linear-gradient(135deg, rgba(0, 41, 254, 0.08), rgba(13, 28, 87, 0.3)); padding: 1rem;">
+              <p class="text-sm mb-sm" style="color: var(--color-text-muted);">Official CA:</p>
+              <div class="flex items-center flex-gap-md flex-wrap">
+                <code style="font-size: 0.75rem; word-break: break-all; color: var(--color-accent-primary);">83iBDw3ZpxqJ3pEzrbttr9fGA57tttehDAxoFyR1moon</code>
+                <button class="btn btn-primary btn-sm" onclick="navigator.clipboard.writeText('83iBDw3ZpxqJ3pEzrbttr9fGA57tttehDAxoFyR1moon')">Copy</button>
+              </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="flex flex-wrap mb-xl" style="gap: 0.5rem;">
+              <a href="https://x.com/MemdexSociety" class="btn btn-primary" style="padding: 0.3rem 0.75rem; font-size: 0.75rem;" target="_blank" rel="noopener noreferrer">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                @memdexsociety
+              </a>
+              <a href="https://t.me/memdexfoundation" class="btn btn-primary" style="padding: 0.3rem 0.75rem; font-size: 0.75rem;" target="_blank" rel="noopener noreferrer">
+                Telegram
+              </a>
+              <a href="https://www.instagram.com/thememdex100" class="btn btn-primary" style="padding: 0.3rem 0.75rem; font-size: 0.75rem;" target="_blank" rel="noopener noreferrer">
+                Instagram
+              </a>
+            </div>
+          </div>
+
+          <div class="reveal reveal-scale">
+            <img src="assets/images/hero-community.webp" alt="$MEMDEX Community" style="width: 100%; border-radius: 1rem; box-shadow: 0 20px 60px rgba(0, 41, 254, 0.35), 0 0 80px rgba(32, 158, 224, 0.15);">
+
+            <!-- CoinGecko Price Chart -->
+            <div style="margin-top: 1.5rem; padding: 2px; border-radius: 1rem; background: linear-gradient(135deg, rgba(192, 192, 192, 0.4), rgba(220, 220, 220, 0.15), rgba(192, 192, 192, 0.4)); box-shadow: 0 0 30px rgba(192, 192, 192, 0.2), 0 0 60px rgba(192, 192, 192, 0.1);">
+              <div style="background: var(--ink-black); border-radius: calc(1rem - 2px); padding: 1rem; overflow: hidden;">
+                <gecko-coin-price-chart-widget locale="en" dark-mode="true" transparent-background="true" outlined="true" coin-id="memdex100" initial-currency="usd"></gecko-coin-price-chart-widget>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats/Overview Section -->
+    <section id="overview" class="section" style="background: linear-gradient(180deg, #0D1C57 0%, #081040 50%, #00012F 100%);">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="badge badge-gold mb-lg">What We're Building</div>
+          <h2 class="mb-md">The MemDex 100 Automated Portfolio</h2>
+          <h3 class="mb-md text-gradient" style="font-size: clamp(1.5rem, 4vw, 2.2rem); font-weight: 700;">The Whole Market, All At Once</h3>
+          <p class="text-xl">The product the $MEMDEX team is actively developing</p>
+          <p class="text-accent text-sm uppercase tracking-wide mt-md">Decentralized | AI-Powered | Multi-sector | Cross-chain</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.25rem;" class="mt-2xl reveal-stagger">
+          <div class="stat-card stat-card-shimmer reveal">
+            <span class="text-gradient-silver" style="font-size: 0.95rem; font-weight: 700; font-family: var(--font-heading); letter-spacing: 0.02em;">~100 Assets</span>
+          </div>
+          <div class="stat-card stat-card-shimmer reveal">
+            <span class="text-gradient-silver" style="font-size: 0.95rem; font-weight: 700; font-family: var(--font-heading); letter-spacing: 0.02em;">Multi-Sector</span>
+          </div>
+          <div class="stat-card stat-card-shimmer reveal">
+            <span class="text-gradient-silver" style="font-size: 0.95rem; font-weight: 700; font-family: var(--font-heading); letter-spacing: 0.02em;">Cross-Chain</span>
+          </div>
+          <div class="stat-card stat-card-shimmer reveal">
+            <span class="text-gradient-silver" style="font-size: 0.95rem; font-weight: 700; font-family: var(--font-heading); letter-spacing: 0.02em;">AI Research</span>
+          </div>
+          <div class="stat-card stat-card-shimmer reveal">
+            <span class="text-gradient-silver" style="font-size: 0.95rem; font-weight: 700; font-family: var(--font-heading); letter-spacing: 0.02em;">Algorithmic Management</span>
+          </div>
+        </div>
+
+        <div class="text-center mt-3xl reveal">
+          <p class="text-lg mb-md" style="max-width: 700px; margin: 0 auto;">
+            <strong>Blue Chips, Memecoins, RWA's, AI/Utility Tokens</strong><br>
+            One Click - Automate Your Portfolio
+          </p>
+          <div class="badge badge-gold">Coming Soon</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section" style="background: linear-gradient(180deg, #00012F 0%, #03091E 40%, #0D1C57 100%);">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 class="mb-md">The Vision Behind $MEMDEX</h2>
+          <p>Our team is building a platform to unlock the future of crypto investing</p>
+          <div class="divider"></div>
+        </div>
+
+        <div class="grid grid-2" style="gap: 2rem; align-items: center; max-width: 1000px; margin: 0 auto;">
+          <div class="reveal reveal-left">
+            <img src="assets/images/map-mockup.webp" alt="MemDex Portfolio Mockup" style="width: 100%; border-radius: 1rem;">
+          </div>
+
+          <div class="reveal reveal-right">
+            <h3 class="mb-lg text-gradient">Instant, intelligent diversification</h3>
+            <p class="text-muted mb-lg">The MemDex Automated Portfolio will deliver:</p>
+            <ul style="list-style: none; padding: 0;" class="reveal-stagger">
+              <li class="mb-md flex items-center flex-gap-md">
+                <span class="text-accent" style="font-size: 1.5rem;">✓</span>
+                <span>Diversification across 100 digital assets in one click</span>
+              </li>
+              <li class="mb-md flex items-center flex-gap-md">
+                <span class="text-accent" style="font-size: 1.5rem;">✓</span>
+                <span>Blue Chips, Memecoins, RWA's, and cutting-edge Utility projects</span>
+              </li>
+              <li class="mb-md flex items-center flex-gap-md">
+                <span class="text-accent" style="font-size: 1.5rem;">✓</span>
+                <span>AI, DeFi, Gaming - managed by a dynamic AI Evaluation System</span>
+              </li>
+              <li class="mb-md flex items-center flex-gap-md">
+                <span class="text-accent" style="font-size: 1.5rem;">✓</span>
+                <span>Superior efficiency, reduced fees, optimized trades</span>
+              </li>
+              <li class="mb-md flex items-center flex-gap-md">
+                <span class="text-accent" style="font-size: 1.5rem;">✓</span>
+                <span>Portfolio growth on the cutting edge of blockchain innovation</span>
+              </li>
+            </ul>
+            <div class="reveal">
+              <a href="#" class="btn btn-primary btn-lg mt-xl">Read the Whitepaper</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Merch Section -->
+    <section class="section" style="background: linear-gradient(180deg, #0D1C57 0%, #081040 50%, #00012F 100%);">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 class="mb-md">Memdex Official Merch</h2>
+          <p class="text-lg">Exclusive merch inspired by, and made for, the community</p>
+        </div>
+
+        <div class="mt-2xl reveal" style="max-width: var(--max-width-wide); margin: 0 auto;">
+          <a href="shop/index.html"><img src="assets/images/memdex-merch.webp" alt="Memdex Official Merch" style="width: 100%; border-radius: 1rem; box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4); cursor: pointer;"></a>
+        </div>
+
+        <div class="text-center mt-xl reveal">
+          <a href="shop/index.html" class="btn btn-primary btn-lg">Shop Now</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Good Morning Memdex Show Section -->
+    <section id="gmm" class="section" style="background: linear-gradient(180deg, #00012F 0%, #03091E 50%, #00012F 100%); overflow: hidden;">
+      <div class="container">
+        <div class="grid grid-2 gmm-grid" style="gap: 2.5rem; align-items: center; max-width: 1100px; margin: 0 auto;">
+          <div class="reveal reveal-left">
+            <a href="gmm.html"><img src="assets/images/gmm-rob.webp" alt="Good Morning Memdex Show — Live on X Spaces" style="width: 100%; border-radius: 1rem; box-shadow: 0 8px 40px rgba(0, 41, 254, 0.25), 0 0 60px rgba(32, 158, 224, 0.1); cursor: pointer;"></a>
+          </div>
+
+          <div class="reveal-stagger">
+            <div class="badge mb-md">Weekly X Spaces</div>
+            <h2 class="mb-md" style="font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 800; line-height: 1.15;">
+              Good Morning<br><span class="text-gradient">Memdex Show</span>
+            </h2>
+            <p class="text-muted mb-sm">
+              Our weekly X Spaces show where we talk $MEMDEX, the Memdex Automated Portfolio, and all things crypto.
+            </p>
+            <p class="text-accent mb-lg" style="font-weight: 600;">Every Friday at 11:00 AM EST</p>
+
+            <ul style="list-style: none; padding: 0;" class="mb-lg">
+              <li class="mb-sm flex items-center flex-gap-md">
+                <span class="text-accent" style="font-size: 1.2rem;">&#127897;</span>
+                <span>Live $MEMDEX &amp; portfolio updates</span>
+              </li>
+              <li class="mb-sm flex items-center flex-gap-md">
+                <span class="text-accent" style="font-size: 1.2rem;">&#128200;</span>
+                <span>Market analysis &amp; alpha calls</span>
+              </li>
+              <li class="mb-sm flex items-center flex-gap-md">
+                <span class="text-accent" style="font-size: 1.2rem;">&#129309;</span>
+                <span>Community voices &amp; guest speakers</span>
+              </li>
+            </ul>
+
+            <div class="btn-group">
+              <a href="https://x.com/MemdexSociety" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Follow @MemdexSociety</a>
+              <a href="gmm.html" class="btn btn-secondary">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid reveal-stagger">
+        <!-- Brand -->
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="assets/images/memdex-logo-footer.webp" alt="MemDex100" width="40" height="40">
+            <span class="footer-logo-text">MemDex100</span>
+          </div>
+          <p class="mb-lg">$MEMDEX — the community memecoin with real utility. Our team is building the MemDex Automated Portfolio: AI-powered diversification across 100 digital assets.</p>
+
+          <p class="text-sm text-muted mb-sm">You can also check us out @</p>
+          <div class="social-links">
+            <a href="https://x.com/MemdexSociety" class="social-link" aria-label="Twitter MemdexSociety" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="https://t.me/memdexfoundation" class="social-link" aria-label="Telegram" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18 1.897-.962 6.502-1.359 8.627-.168.9-.5 1.201-.82 1.23-.697.064-1.226-.461-1.901-.903-1.056-.693-1.653-1.124-2.678-1.8-1.185-.781-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.139-5.062 3.345-.479.329-.913.489-1.302.481-.428-.008-1.252-.241-1.865-.44-.752-.244-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.831-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635.099-.002.321.023.465.14.12.099.152.232.168.325.016.093.036.305.02.47z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/thememdex100" class="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+          </div>
+
+          <div class="mt-xl" style="background: linear-gradient(135deg, rgba(0, 41, 254, 0.08), rgba(13, 28, 87, 0.3)); padding: 1rem; border-radius: 0.5rem; border: 1px solid var(--color-border);">
+            <p class="text-xs text-muted mb-xs">Official CA:</p>
+            <code style="font-size: 0.7rem; word-break: break-all; color: var(--color-accent-primary);">83iBDw3ZpxqJ3pEzrbttr9fGA57tttehDAxoFyR1moon</code>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop/index.html">Merch</a></li>
+            <li><a href="gmm.html">GMM Show</a></li>
+            <li><a href="coffee.html">Coffee</a></li>
+            <li><a href="about.html">FAQ</a></li>
+          </ul>
+        </div>
+
+        <!-- Community -->
+        <div class="footer-col">
+          <h4>Community</h4>
+          <ul class="footer-links">
+            <li><a href="https://x.com/MemdexSociety" target="_blank" rel="noopener noreferrer">X (Twitter)</a></li>
+            <li><a href="https://t.me/memdexfoundation" target="_blank" rel="noopener noreferrer">Telegram</a></li>
+            <li><a href="https://www.instagram.com/thememdex100" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="https://www.coingecko.com/en/coins/memdex100" target="_blank" rel="noopener noreferrer">CoinGecko</a></li>
+          </ul>
+        </div>
+
+        <!-- Legal & Subscribe -->
+        <div class="footer-col">
+          <h4>Subscribe For Updates</h4>
+          <form class="mb-xl" style="display: flex; gap: 0.5rem;">
+            <input type="email" placeholder="Enter your email" class="form-input" style="padding: 0.5rem; font-size: 0.85rem;">
+            <button type="submit" class="btn btn-primary btn-sm">→</button>
+          </form>
+          <h4>Legal</h4>
+          <ul class="footer-links">
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="refund.html">Refund Policy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copyright">&copy; 2025 Web Design by Memdex100</p>
+        <div class="footer-legal">
+          <a href="#">Memdex100 AI Chat</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" aria-label="Back to top">&#8593;</button>
+
+  <!-- CoinGecko Widget -->
+  <script src="https://widgets.coingecko.com/gecko-coin-price-chart-widget.js"></script>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+
+</body>
+</html>
