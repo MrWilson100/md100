@@ -82,35 +82,41 @@
 
     <!-- Hero Section -->
     <section id="hero" class="section pt-0" style="background: linear-gradient(180deg, #03091E 0%, #00012F 50%, #0D1C57 100%); position: relative; overflow: hidden;">
-      <div class="container" style="padding-top: 6rem; padding-bottom: 4rem;">
+      <!-- Ambient orbs -->
+      <div class="hero-orb hero-orb-1"></div>
+      <div class="hero-orb hero-orb-2"></div>
+      <div class="hero-orb hero-orb-3"></div>
+      <div class="container" style="padding-top: 6rem; padding-bottom: 4rem; position: relative; z-index: 1;">
         <div class="grid grid-2" style="gap: 3rem; align-items: center;">
           <div class="reveal-stagger">
-            <div class="badge mb-lg">More than a memecoin</div>
-            <h1 class="mb-lg">
+            <div class="badge badge-glow mb-lg">More than a memecoin</div>
+            <h1 class="mb-lg" style="letter-spacing: -0.02em;">
               <span class="text-gradient">Join the Revolution</span><br>
-              Community Run<br>
-              Utility Based
+              <span style="opacity: 0.95;">Community Run</span><br>
+              <span style="opacity: 0.9;">Utility Based</span>
             </h1>
 
             <!-- Contract Address -->
-            <div class="card mb-xl" style="background: linear-gradient(135deg, rgba(0, 41, 254, 0.08), rgba(13, 28, 87, 0.3)); padding: 1rem;">
-              <p class="text-sm mb-sm" style="color: var(--color-text-muted);">Official CA:</p>
-              <div class="flex items-center flex-gap-md flex-wrap">
-                <code style="font-size: 0.75rem; word-break: break-all; color: var(--color-accent-primary);">83iBDw3ZpxqJ3pEzrbttr9fGA57tttehDAxoFyR1moon</code>
-                <button class="btn btn-primary btn-sm" onclick="navigator.clipboard.writeText('83iBDw3ZpxqJ3pEzrbttr9fGA57tttehDAxoFyR1moon')">Copy</button>
+            <div class="ca-card mb-xl">
+              <div class="ca-card-inner">
+                <p class="text-sm mb-sm" style="color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; font-size: 0.7rem;">Official Contract Address</p>
+                <div class="flex items-center flex-gap-md flex-wrap">
+                  <code style="font-size: 0.75rem; word-break: break-all; color: var(--color-accent-primary);">83iBDw3ZpxqJ3pEzrbttr9fGA57tttehDAxoFyR1moon</code>
+                  <button class="btn btn-primary btn-sm copy-btn" onclick="navigator.clipboard.writeText('83iBDw3ZpxqJ3pEzrbttr9fGA57tttehDAxoFyR1moon'); this.textContent='Copied!'; setTimeout(() => this.textContent='Copy', 1500);">Copy</button>
+                </div>
               </div>
             </div>
 
             <!-- Social Links -->
             <div class="flex flex-wrap mb-xl" style="gap: 0.5rem;">
-              <a href="https://x.com/MemdexSociety" class="btn btn-primary" style="padding: 0.3rem 0.75rem; font-size: 0.75rem;" target="_blank" rel="noopener noreferrer">
+              <a href="https://x.com/MemdexSociety" class="btn btn-secondary" style="padding: 0.35rem 0.85rem; font-size: 0.75rem;" target="_blank" rel="noopener noreferrer">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
                 @memdexsociety
               </a>
-              <a href="https://t.me/memdexfoundation" class="btn btn-primary" style="padding: 0.3rem 0.75rem; font-size: 0.75rem;" target="_blank" rel="noopener noreferrer">
+              <a href="https://t.me/memdexfoundation" class="btn btn-secondary" style="padding: 0.35rem 0.85rem; font-size: 0.75rem;" target="_blank" rel="noopener noreferrer">
                 Telegram
               </a>
-              <a href="https://www.instagram.com/thememdex100" class="btn btn-primary" style="padding: 0.3rem 0.75rem; font-size: 0.75rem;" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.instagram.com/thememdex100" class="btn btn-secondary" style="padding: 0.35rem 0.85rem; font-size: 0.75rem;" target="_blank" rel="noopener noreferrer">
                 Instagram
               </a>
             </div>
@@ -130,6 +136,9 @@
       </div>
     </section>
 
+    <!-- Section Glow Separator -->
+    <div class="section-glow"></div>
+
     <!-- Stats/Overview Section -->
     <section id="overview" class="section" style="background: linear-gradient(180deg, #0D1C57 0%, #081040 50%, #00012F 100%);">
       <div class="container">
@@ -137,8 +146,8 @@
           <div class="badge badge-gold mb-lg">What We're Building</div>
           <h2 class="mb-md">The MemDex 100 Automated Portfolio</h2>
           <h3 class="mb-md text-gradient" style="font-size: clamp(1.5rem, 4vw, 2.2rem); font-weight: 700;">The Whole Market, All At Once</h3>
-          <p class="text-xl">The product the $MEMDEX team is actively developing</p>
-          <p class="text-accent text-sm uppercase tracking-wide mt-md">Decentralized | AI-Powered | Multi-sector | Cross-chain</p>
+          <p class="text-xl" style="letter-spacing: 0.01em;">The product the $MEMDEX team is actively developing</p>
+          <p class="text-accent text-sm uppercase tracking-wider mt-md" style="opacity: 0.85;">Decentralized &middot; AI-Powered &middot; Multi-sector &middot; Cross-chain</p>
         </div>
 
         <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.25rem;" class="mt-2xl reveal-stagger">
@@ -169,8 +178,11 @@
       </div>
     </section>
 
+    <!-- Section Glow Separator -->
+    <div class="section-glow"></div>
+
     <!-- Features Section -->
-    <section id="features" class="section" style="background: linear-gradient(180deg, #00012F 0%, #03091E 40%, #0D1C57 100%);">
+    <section id="features" class="section" style="background: linear-gradient(180deg, #00012F 0%, #03091E 40%, #0D1C57 100%); position: relative;">
       <div class="container">
         <div class="section-header reveal">
           <h2 class="mb-md">The Vision Behind $MEMDEX</h2>
@@ -180,31 +192,31 @@
 
         <div class="grid grid-2" style="gap: 2rem; align-items: center; max-width: 1000px; margin: 0 auto;">
           <div class="reveal reveal-left">
-            <img src="assets/images/map-mockup.webp" alt="MemDex Portfolio Mockup" style="width: 100%; border-radius: 1rem;">
+            <img src="assets/images/map-mockup.webp" alt="MemDex Portfolio Mockup" style="width: 100%; border-radius: 1rem; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 0 0 80px rgba(0, 41, 254, 0.1);">
           </div>
 
           <div class="reveal reveal-right">
             <h3 class="mb-lg text-gradient">Instant, intelligent diversification</h3>
             <p class="text-muted mb-lg">The MemDex Automated Portfolio will deliver:</p>
             <ul style="list-style: none; padding: 0;" class="reveal-stagger">
-              <li class="mb-md flex items-center flex-gap-md">
-                <span class="text-accent" style="font-size: 1.5rem;">✓</span>
+              <li class="mb-md flex items-center flex-gap-md checklist-item">
+                <span class="check-icon"></span>
                 <span>Diversification across 100 digital assets in one click</span>
               </li>
-              <li class="mb-md flex items-center flex-gap-md">
-                <span class="text-accent" style="font-size: 1.5rem;">✓</span>
+              <li class="mb-md flex items-center flex-gap-md checklist-item">
+                <span class="check-icon"></span>
                 <span>Blue Chips, Memecoins, RWA's, and cutting-edge Utility projects</span>
               </li>
-              <li class="mb-md flex items-center flex-gap-md">
-                <span class="text-accent" style="font-size: 1.5rem;">✓</span>
+              <li class="mb-md flex items-center flex-gap-md checklist-item">
+                <span class="check-icon"></span>
                 <span>AI, DeFi, Gaming - managed by a dynamic AI Evaluation System</span>
               </li>
-              <li class="mb-md flex items-center flex-gap-md">
-                <span class="text-accent" style="font-size: 1.5rem;">✓</span>
+              <li class="mb-md flex items-center flex-gap-md checklist-item">
+                <span class="check-icon"></span>
                 <span>Superior efficiency, reduced fees, optimized trades</span>
               </li>
-              <li class="mb-md flex items-center flex-gap-md">
-                <span class="text-accent" style="font-size: 1.5rem;">✓</span>
+              <li class="mb-md flex items-center flex-gap-md checklist-item">
+                <span class="check-icon"></span>
                 <span>Portfolio growth on the cutting edge of blockchain innovation</span>
               </li>
             </ul>
@@ -216,16 +228,22 @@
       </div>
     </section>
 
+    <!-- Section Glow Separator -->
+    <div class="section-glow"></div>
+
     <!-- Merch Section -->
     <section class="section" style="background: linear-gradient(180deg, #0D1C57 0%, #081040 50%, #00012F 100%);">
       <div class="container">
         <div class="section-header reveal">
           <h2 class="mb-md">Memdex Official Merch</h2>
           <p class="text-lg">Exclusive merch inspired by, and made for, the community</p>
+          <div class="divider"></div>
         </div>
 
         <div class="mt-2xl reveal" style="max-width: var(--max-width-wide); margin: 0 auto;">
-          <a href="shop/index.html"><img src="assets/images/memdex-merch.webp" alt="Memdex Official Merch" style="width: 100%; border-radius: 1rem; box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4); cursor: pointer;"></a>
+          <a href="shop/index.html" class="img-glow-wrap">
+            <img src="assets/images/memdex-merch.webp" alt="Memdex Official Merch" style="width: 100%; border-radius: 1rem; box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5), 0 0 60px rgba(0, 41, 254, 0.1); cursor: pointer; transition: transform 0.4s ease, box-shadow 0.4s ease;">
+          </a>
         </div>
 
         <div class="text-center mt-xl reveal">
@@ -233,6 +251,9 @@
         </div>
       </div>
     </section>
+
+    <!-- Section Glow Separator -->
+    <div class="section-glow"></div>
 
     <!-- Good Morning Memdex Show Section -->
     <section id="gmm" class="section" style="background: linear-gradient(180deg, #00012F 0%, #03091E 50%, #00012F 100%); overflow: hidden;">
@@ -253,16 +274,16 @@
             <p class="text-accent mb-lg" style="font-weight: 600;">Every Friday at 11:00 AM EST</p>
 
             <ul style="list-style: none; padding: 0;" class="mb-lg">
-              <li class="mb-sm flex items-center flex-gap-md">
-                <span class="text-accent" style="font-size: 1.2rem;">&#127897;</span>
+              <li class="mb-sm flex items-center flex-gap-md checklist-item">
+                <span class="check-icon"></span>
                 <span>Live $MEMDEX &amp; portfolio updates</span>
               </li>
-              <li class="mb-sm flex items-center flex-gap-md">
-                <span class="text-accent" style="font-size: 1.2rem;">&#128200;</span>
+              <li class="mb-sm flex items-center flex-gap-md checklist-item">
+                <span class="check-icon"></span>
                 <span>Market analysis &amp; alpha calls</span>
               </li>
-              <li class="mb-sm flex items-center flex-gap-md">
-                <span class="text-accent" style="font-size: 1.2rem;">&#129309;</span>
+              <li class="mb-sm flex items-center flex-gap-md checklist-item">
+                <span class="check-icon"></span>
                 <span>Community voices &amp; guest speakers</span>
               </li>
             </ul>
@@ -303,9 +324,11 @@
             </a>
           </div>
 
-          <div class="mt-xl" style="background: linear-gradient(135deg, rgba(0, 41, 254, 0.08), rgba(13, 28, 87, 0.3)); padding: 1rem; border-radius: 0.5rem; border: 1px solid var(--color-border);">
-            <p class="text-xs text-muted mb-xs">Official CA:</p>
-            <code style="font-size: 0.7rem; word-break: break-all; color: var(--color-accent-primary);">83iBDw3ZpxqJ3pEzrbttr9fGA57tttehDAxoFyR1moon</code>
+          <div class="ca-card mt-xl">
+            <div class="ca-card-inner" style="padding: 0.85rem;">
+              <p class="text-muted mb-xs" style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600;">Official CA:</p>
+              <code style="font-size: 0.7rem; word-break: break-all; color: var(--color-accent-primary);">83iBDw3ZpxqJ3pEzrbttr9fGA57tttehDAxoFyR1moon</code>
+            </div>
           </div>
         </div>
 
