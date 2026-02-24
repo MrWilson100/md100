@@ -5,9 +5,9 @@
 
 :root {
   /* ── New 10-color palette ── */
-  --ink-black: #03091E;
-  --prussian-blue: #00012F;
-  --deep-navy: #0D1C57;
+  --ink-black: #010410;
+  --prussian-blue: #000118;
+  --deep-navy: #06102E;
   --steel-azure: #0E5099;
   --steel-azure-2: #0C4B9B;
   --blue: #0029FE;
@@ -20,7 +20,7 @@
   --color-bg-primary: var(--ink-black);
   --color-bg-secondary: var(--prussian-blue);
   --color-bg-card: var(--deep-navy);
-  --color-bg-card-hover: #142570;
+  --color-bg-card-hover: #0A1545;
 
   /* Accent colors */
   --color-accent-primary: var(--blue-bell);
@@ -36,7 +36,7 @@
   --gradient-bg: linear-gradient(180deg, var(--ink-black) 0%, var(--prussian-blue) 50%, var(--deep-navy) 100%);
   --gradient-accent: linear-gradient(135deg, var(--blue) 0%, var(--blue-bell) 50%, var(--steel-blue) 100%);
   --gradient-accent-vivid: linear-gradient(135deg, var(--blue) 0%, var(--radioactive-grass) 100%);
-  --gradient-card: linear-gradient(145deg, rgba(13, 28, 87, 0.8) 0%, rgba(0, 1, 47, 0.6) 100%);
+  --gradient-card: linear-gradient(145deg, rgba(6, 16, 46, 0.9) 0%, rgba(0, 1, 24, 0.8) 100%);
   --gradient-border: linear-gradient(135deg, var(--steel-azure) 0%, var(--blue-bell) 100%);
   --gradient-glow: linear-gradient(135deg, rgba(0, 41, 254, 0.4) 0%, rgba(32, 158, 224, 0.2) 100%);
 
@@ -538,7 +538,7 @@ hr {
 .hero-orb-1 {
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(0, 41, 254, 0.35) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(0, 41, 254, 0.25) 0%, transparent 70%);
   top: -10%;
   right: -5%;
   animation: orbFloat1 12s ease-in-out infinite;
@@ -547,7 +547,7 @@ hr {
 .hero-orb-2 {
   width: 350px;
   height: 350px;
-  background: radial-gradient(circle, rgba(32, 158, 224, 0.3) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(32, 158, 224, 0.2) 0%, transparent 70%);
   bottom: 10%;
   left: -8%;
   animation: orbFloat2 15s ease-in-out infinite;
@@ -556,7 +556,7 @@ hr {
 .hero-orb-3 {
   width: 250px;
   height: 250px;
-  background: radial-gradient(circle, rgba(14, 80, 153, 0.35) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(14, 80, 153, 0.25) 0%, transparent 70%);
   top: 40%;
   left: 45%;
   animation: orbFloat3 10s ease-in-out infinite;
@@ -594,8 +594,8 @@ hr {
   height: 24px;
   min-width: 24px;
   border-radius: 50%;
-  background: linear-gradient(135deg, rgba(0, 41, 254, 0.25), rgba(32, 158, 224, 0.15));
-  border: 1px solid rgba(32, 158, 224, 0.3);
+  background: linear-gradient(135deg, rgba(0, 41, 254, 0.2), rgba(32, 158, 224, 0.1));
+  border: 1px solid rgba(32, 158, 224, 0.25);
 }
 
 .check-icon::after {
@@ -624,7 +624,7 @@ hr {
 }
 
 .ca-card-inner {
-  background: linear-gradient(135deg, rgba(3, 9, 30, 0.95), rgba(13, 28, 87, 0.6));
+  background: linear-gradient(135deg, rgba(1, 4, 16, 0.97), rgba(6, 16, 46, 0.7));
   border-radius: calc(var(--radius-lg) - 1px);
   padding: 1.25rem;
 }

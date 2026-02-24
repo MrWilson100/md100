@@ -8,7 +8,7 @@
    ============================================= */
 .ticker-bar {
   width: 100%;
-  background: rgba(3, 9, 30, 0.6);
+  background: rgba(1, 4, 16, 0.7);
   border-top: 1px solid rgba(0, 41, 254, 0.12);
   overflow: hidden;
   padding-top: var(--space-md);
@@ -33,9 +33,9 @@
     padding: var(--space-xs) 0;
     background: linear-gradient(
       135deg,
-      rgba(13, 28, 87, 0.5) 0%,
-      rgba(0, 1, 47, 0.4) 50%,
-      rgba(14, 80, 153, 0.25) 100%
+      rgba(4, 12, 40, 0.6) 0%,
+      rgba(0, 1, 24, 0.5) 50%,
+      rgba(6, 40, 80, 0.3) 100%
     );
     backdrop-filter: blur(20px) saturate(1.4);
     -webkit-backdrop-filter: blur(20px) saturate(1.4);
@@ -66,9 +66,9 @@
   /* Glassmorphism */
   background: linear-gradient(
     135deg,
-    rgba(13, 28, 87, 0.45) 0%,
-    rgba(0, 1, 47, 0.35) 50%,
-    rgba(14, 80, 153, 0.2) 100%
+    rgba(4, 12, 40, 0.65) 0%,
+    rgba(0, 1, 24, 0.55) 50%,
+    rgba(6, 40, 80, 0.25) 100%
   );
   backdrop-filter: blur(20px) saturate(1.4);
   -webkit-backdrop-filter: blur(20px) saturate(1.4);
@@ -89,9 +89,9 @@
 .nav-scrolled {
   background: linear-gradient(
     135deg,
-    rgba(13, 28, 87, 0.7) 0%,
-    rgba(0, 1, 47, 0.65) 50%,
-    rgba(14, 80, 153, 0.35) 100%
+    rgba(4, 12, 40, 0.85) 0%,
+    rgba(0, 1, 24, 0.8) 50%,
+    rgba(6, 40, 80, 0.4) 100%
   );
   border-bottom-color: rgba(0, 41, 254, 0.35);
   box-shadow:
@@ -227,7 +227,7 @@
   right: 0;
   width: 100%;
   height: 100vh;
-  background: rgba(3, 9, 30, 0.7);
+  background: rgba(1, 4, 16, 0.8);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   z-index: 999;
@@ -480,7 +480,7 @@ body.modal-open {
 
 /* Feature Card — icon/image top, heading, description */
 .feature-card {
-  background: linear-gradient(160deg, rgba(13, 28, 87, 0.9) 0%, rgba(0, 1, 47, 0.7) 100%);
+  background: linear-gradient(160deg, rgba(6, 16, 46, 0.95) 0%, rgba(0, 1, 24, 0.8) 100%);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   padding: var(--space-2xl) var(--space-xl);
@@ -618,7 +618,7 @@ body.modal-open {
 
 /* Stat Card */
 .stat-card {
-  background: linear-gradient(160deg, rgba(13, 28, 87, 0.6) 0%, rgba(0, 1, 47, 0.4) 100%);
+  background: linear-gradient(160deg, rgba(6, 16, 46, 0.7) 0%, rgba(0, 1, 24, 0.5) 100%);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   padding: var(--space-lg) var(--space-md);
