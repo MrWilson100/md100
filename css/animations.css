@@ -75,6 +75,20 @@
   transform: scale(1) translateY(0);
 }
 
+/* Blur-in variant — starts blurred and fades in sharp */
+.reveal-blur {
+  opacity: 0;
+  filter: blur(12px);
+  transform: translateY(20px);
+  transition: opacity 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.reveal-blur.visible {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+}
+
 /* ========== Staggered Children ========== */
 .reveal-stagger > * {
   opacity: 0;
@@ -116,6 +130,11 @@
 
   .reveal-stagger > * {
     transform: translateY(25px);
+  }
+
+  .reveal-blur {
+    filter: blur(8px);
+    transform: translateY(15px);
   }
 }
 
@@ -296,9 +315,11 @@
   .reveal-left,
   .reveal-right,
   .reveal-scale,
+  .reveal-blur,
   .reveal-stagger > * {
     opacity: 1;
     transform: none;
+    filter: none;
   }
 
   .parallax-bg {
