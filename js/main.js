@@ -22,8 +22,18 @@ document.addEventListener('DOMContentLoaded', () => {
   // ========== Sticky Navigation ==========
   const nav = document.querySelector('.nav');
   if (nav) {
+    let lastScrollY = window.scrollY;
     const handleScroll = () => {
-      nav.classList.toggle('nav-scrolled', window.scrollY > 50);
+      const currentScrollY = window.scrollY;
+      nav.classList.toggle('nav-scrolled', currentScrollY > 50);
+
+      // Hide/show nav on mobile based on scroll direction
+      if (currentScrollY > 100 && currentScrollY > lastScrollY) {
+        nav.classList.add('nav-hidden');
+      } else {
+        nav.classList.remove('nav-hidden');
+      }
+      lastScrollY = currentScrollY;
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     // Run once on load in case page is already scrolled
