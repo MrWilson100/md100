@@ -87,6 +87,14 @@
 }
 
 @media (max-width: 768px) {
+  .nav {
+    background: linear-gradient(
+      135deg,
+      rgba(4, 12, 40, 0.45) 0%,
+      rgba(0, 1, 24, 0.35) 50%,
+      rgba(6, 40, 80, 0.15) 100%
+    );
+  }
   .nav.nav-hidden {
     transform: translateY(-100%);
   }
