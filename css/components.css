@@ -449,9 +449,9 @@ body.modal-open {
 
 /* Button with icon */
 .btn-icon {
-  padding: 0.75rem;
-  width: 44px;
-  height: 44px;
+  padding: 0.85rem;
+  width: 52px;
+  height: 52px;
 }
 
 /* Button group */
