@@ -183,4 +183,71 @@ document.addEventListener('DOMContentLoaded', () => {
     yearEl.textContent = new Date().getFullYear();
   }
 
+  // ========== 3D Tilt Card Effect ==========
+  document.querySelectorAll('.tilt-card').forEach(card => {
+    const inner = card.querySelector('.tilt-card-inner');
+    if (!inner) return;
+
+    const maxTilt = 12;
+
+    // Desktop: mouse hover tilt + glow
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width;
+      const y = (e.clientY - rect.top) / rect.height;
+      const rotateX = (0.5 - y) * maxTilt;
+      const rotateY = (x - 0.5) * maxTilt;
+
+      inner.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.03)`;
+      inner.style.boxShadow = `
+        ${(x - 0.5) * -30}px ${(y - 0.5) * -30}px 60px rgba(0, 41, 254, 0.45),
+        0 0 100px rgba(32, 158, 224, 0.25)
+      `;
+    });
+
+    card.addEventListener('mouseleave', () => {
+      inner.style.transform = '';
+      inner.style.boxShadow = '0 20px 60px rgba(0, 41, 254, 0.35), 0 0 80px rgba(32, 158, 224, 0.15)';
+    });
+
+    // Mobile: device orientation tilt
+    if (window.DeviceOrientationEvent) {
+      let orientationActive = false;
+
+      const handleOrientation = (e) => {
+        if (!orientationActive) return;
+        const beta = Math.max(-30, Math.min(30, e.beta || 0));
+        const gamma = Math.max(-30, Math.min(30, e.gamma || 0));
+        const rotateX = (beta / 30) * maxTilt * 0.5;
+        const rotateY = (gamma / 30) * maxTilt * 0.5;
+        inner.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      };
+
+      // Activate gyroscope when card is in viewport
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          orientationActive = entry.isIntersecting;
+          if (!orientationActive) {
+            inner.style.transform = '';
+          }
+        });
+      }, { threshold: 0.3 });
+
+      observer.observe(card);
+
+      // iOS 13+ requires permission request
+      if (typeof DeviceOrientationEvent.requestPermission === 'function') {
+        document.addEventListener('touchstart', () => {
+          DeviceOrientationEvent.requestPermission().then(state => {
+            if (state === 'granted') {
+              window.addEventListener('deviceorientation', handleOrientation, { passive: true });
+            }
+          }).catch(() => {});
+        }, { once: true });
+      } else {
+        window.addEventListener('deviceorientation', handleOrientation, { passive: true });
+      }
+    }
+  });
+
 });
