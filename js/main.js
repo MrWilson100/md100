@@ -94,7 +94,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // ========== Modal Handling ==========
   // Open modal via data-modal attribute
   document.querySelectorAll('[data-modal]').forEach(trigger => {
-    trigger.addEventListener('click', () => {
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
       const modal = document.getElementById(trigger.dataset.modal);
       if (modal) {
         modal.classList.add('active');
