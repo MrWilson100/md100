@@ -250,4 +250,108 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // ========== Electric Lightning Effect ==========
+  document.querySelectorAll('.electric-wrap').forEach(wrap => {
+    const canvas = wrap.querySelector('.electric-canvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let bolts = [];
+    let animFrame = null;
+
+    function resize() {
+      const rect = wrap.getBoundingClientRect();
+      canvas.width = rect.width * window.devicePixelRatio;
+      canvas.height = rect.height * window.devicePixelRatio;
+      ctx.setTransform(window.devicePixelRatio, 0, 0, window.devicePixelRatio, 0, 0);
+    }
+    resize();
+    window.addEventListener('resize', resize, { passive: true });
+
+    function createBolt(x, y, intensity) {
+      const branches = [];
+      const count = intensity === 'strong' ? 3 + Math.floor(Math.random() * 2) : 1 + Math.floor(Math.random() * 2);
+
+      for (let b = 0; b < count; b++) {
+        const angle = Math.random() * Math.PI * 2;
+        const length = (intensity === 'strong' ? 40 : 22) + Math.random() * 25;
+        const segments = [];
+        let cx = x, cy = y;
+
+        const steps = 5 + Math.floor(Math.random() * 3);
+        for (let i = 0; i < steps; i++) {
+          const t = i / steps;
+          const stepLen = length / steps;
+          const jitter = (1 - t * 0.5) * 6;
+          cx += Math.cos(angle) * stepLen + (Math.random() - 0.5) * jitter;
+          cy += Math.sin(angle) * stepLen + (Math.random() - 0.5) * jitter;
+          segments.push({ x: cx, y: cy });
+        }
+        branches.push(segments);
+      }
+
+      return { x, y, branches, life: 1, decay: intensity === 'strong' ? 0.04 : 0.06 };
+    }
+
+    function drawBolts() {
+      ctx.clearRect(0, 0, canvas.width / window.devicePixelRatio, canvas.height / window.devicePixelRatio);
+
+      bolts = bolts.filter(bolt => {
+        bolt.life -= bolt.decay;
+        if (bolt.life <= 0) return false;
+
+        const alpha = bolt.life * 0.65;
+
+        bolt.branches.forEach(segments => {
+          ctx.beginPath();
+          ctx.moveTo(bolt.x, bolt.y);
+          segments.forEach(p => ctx.lineTo(p.x, p.y));
+          ctx.strokeStyle = `rgba(32, 158, 224, ${alpha * 0.25})`;
+          ctx.lineWidth = 2;
+          ctx.shadowColor = `rgba(32, 158, 224, ${alpha * 0.3})`;
+          ctx.shadowBlur = 8;
+          ctx.stroke();
+
+          ctx.beginPath();
+          ctx.moveTo(bolt.x, bolt.y);
+          segments.forEach(p => ctx.lineTo(p.x, p.y));
+          ctx.strokeStyle = `rgba(200, 230, 255, ${alpha * 0.4})`;
+          ctx.lineWidth = 0.8;
+          ctx.shadowBlur = 4;
+          ctx.stroke();
+        });
+
+        ctx.shadowBlur = 0;
+        return true;
+      });
+
+      if (bolts.length > 0) {
+        animFrame = requestAnimationFrame(drawBolts);
+      } else {
+        animFrame = null;
+        ctx.clearRect(0, 0, canvas.width / window.devicePixelRatio, canvas.height / window.devicePixelRatio);
+      }
+    }
+
+    function spark(e, intensity) {
+      const rect = wrap.getBoundingClientRect();
+      const x = (e.clientX || e.touches[0].clientX) - rect.left;
+      const y = (e.clientY || e.touches[0].clientY) - rect.top;
+      bolts.push(createBolt(x, y, intensity));
+      if (!animFrame) animFrame = requestAnimationFrame(drawBolts);
+    }
+
+    // Desktop: subtle single bolt on hover
+    let hoverThrottle = 0;
+    wrap.addEventListener('mousemove', (e) => {
+      const now = Date.now();
+      if (now - hoverThrottle < 180) return;
+      hoverThrottle = now;
+      spark(e, 'subtle');
+    });
+
+    // Click / tap: slightly more visible
+    wrap.addEventListener('click', (e) => spark(e, 'strong'));
+    wrap.addEventListener('touchstart', (e) => spark(e, 'strong'), { passive: true });
+  });
+
 });
