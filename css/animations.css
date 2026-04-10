@@ -253,6 +253,47 @@
 .delay-400 { animation-delay: 0.4s; }
 .delay-500 { animation-delay: 0.5s; }
 
+/* ========== Glow Border Card ========== */
+.glow-border-card {
+  border: 1px solid rgba(32, 158, 224, 0.2);
+}
+
+.glow-border-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -80%;
+  width: 60%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(90, 200, 232, 0.7), rgba(32, 158, 224, 0.5), transparent);
+  animation: glowScan 6s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.glow-border-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: -80%;
+  width: 60%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(32, 158, 224, 0.5), rgba(90, 200, 232, 0.7), transparent);
+  animation: glowScanReverse 6s ease-in-out 3s infinite;
+  pointer-events: none;
+  z-index: 2;
+}
+
+@keyframes glowScan {
+  0% { left: -60%; }
+  100% { left: 100%; }
+}
+
+@keyframes glowScanReverse {
+  0% { right: -60%; }
+  100% { right: 100%; }
+}
+
 /* ========== Parallax ========== */
 .parallax-container {
   overflow: hidden;
