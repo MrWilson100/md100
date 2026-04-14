@@ -15,6 +15,16 @@
   border-top-style: solid;
   overflow: hidden;
   padding-top: var(--space-xs);
+  max-height: 200px;
+  transition: max-height 0.4s ease, opacity 0.4s ease, padding 0.4s ease;
+  opacity: 1;
+}
+
+.ticker-bar.ticker-hidden {
+  max-height: 0;
+  opacity: 0;
+  padding-top: 0;
+  border-top-width: 0;
 }
 
 .ticker-row {
@@ -77,7 +87,8 @@
   -webkit-backdrop-filter: blur(20px) saturate(1.4);
   /* 3D depth: top highlight + bottom shadow */
   border-top: 1px solid rgba(32, 158, 224, 0.15);
-  border-bottom: 1px solid rgba(0, 41, 254, 0.2);
+  border-bottom: none;
+  /* Bottom gradient line added via .nav-inner::after */
   box-shadow:
     0 1px 0 0 rgba(255, 255, 255, 0.05) inset,
     0 -1px 0 0 rgba(0, 0, 0, 0.2) inset,
@@ -128,6 +139,17 @@
   margin: 0 auto;
   padding: var(--space-sm) var(--space-xl);
   min-height: auto;
+  position: relative;
+}
+
+.nav-inner::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(32, 158, 224, 0.6), rgba(255, 255, 255, 0.3), rgba(32, 158, 224, 0.6), transparent);
 }
 
 /* Nav Logo */

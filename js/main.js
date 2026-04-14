@@ -17,6 +17,31 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(updateNavPadding, 1500);
     setTimeout(updateNavPadding, 3000);
     window.addEventListener('resize', updateNavPadding, { passive: true });
+
+    // Ticker hide/show on scroll direction
+    const tickerBar = navEl.querySelector('.ticker-bar');
+    if (tickerBar) {
+      let lastScrollY = window.scrollY;
+      let ticking = false;
+
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          requestAnimationFrame(() => {
+            const currentY = window.scrollY;
+            if (currentY > lastScrollY && currentY > 80) {
+              tickerBar.classList.add('ticker-hidden');
+            } else {
+              tickerBar.classList.remove('ticker-hidden');
+            }
+            lastScrollY = currentY;
+            // Update body padding since nav height changes
+            updateNavPadding();
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }, { passive: true });
+    }
   }
 
   // ========== Sticky Navigation ==========
