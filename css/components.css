@@ -9,9 +9,12 @@
 .ticker-bar {
   width: 100%;
   background: rgba(1, 4, 16, 0.7);
-  border-top: 1px solid rgba(0, 41, 254, 0.12);
+  border-top: none;
+  border-image: linear-gradient(90deg, transparent, rgba(32, 158, 224, 0.6), rgba(255, 255, 255, 0.3), rgba(32, 158, 224, 0.6), transparent) 1;
+  border-top-width: 1px;
+  border-top-style: solid;
   overflow: hidden;
-  padding-top: var(--space-md);
+  padding-top: var(--space-xs);
 }
 
 .ticker-row {
@@ -123,8 +126,8 @@
   width: 100%;
   max-width: var(--max-width-wide);
   margin: 0 auto;
-  padding: var(--space-lg) var(--space-xl);
-  min-height: var(--nav-height);
+  padding: var(--space-sm) var(--space-xl);
+  min-height: auto;
 }
 
 /* Nav Logo */
