@@ -16,13 +16,11 @@
   overflow: hidden;
   padding-top: var(--space-xs);
   max-height: 200px;
-  transition: max-height 0.4s ease, opacity 0.4s ease, padding 0.4s ease;
-  opacity: 1;
+  transition: max-height 0.4s ease, padding 0.4s ease, border-top-width 0.4s ease;
 }
 
 .ticker-bar.ticker-hidden {
   max-height: 0;
-  opacity: 0;
   padding-top: 0;
   border-top-width: 0;
 }
