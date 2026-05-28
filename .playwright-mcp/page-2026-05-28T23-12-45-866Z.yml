@@ -1,0 +1,699 @@
+- generic [active] [ref=e1]:
+  - navigation "Main navigation" [ref=e2]:
+    - link "Sign up for early access to the MEMDEX100 Automated Portfolio" [ref=e3] [cursor=pointer]:
+      - /url: https://memdexone.com
+      - generic [ref=e5]:
+        - generic [ref=e6]: Early Access
+        - generic [ref=e8]:
+          - text: The
+          - strong [ref=e9]: Memdex Automated Portfolio
+          - text: is now accepting applications.
+        - generic [ref=e10]:
+          - text: Sign up for access
+          - img [ref=e11]
+    - generic [ref=e13]:
+      - link "MemDex100 Home" [ref=e14] [cursor=pointer]:
+        - /url: index.html
+        - img "MemDex100 Logo" [ref=e15]
+        - generic [ref=e16]: MEMDEX100
+      - list [ref=e17]:
+        - listitem [ref=e18]:
+          - link "Home" [ref=e19] [cursor=pointer]:
+            - /url: index.html
+        - listitem [ref=e20]:
+          - link "Merch" [ref=e21] [cursor=pointer]:
+            - /url: "#"
+        - listitem [ref=e22]:
+          - link "GMM Show" [ref=e23] [cursor=pointer]:
+            - /url: gmm.html
+        - listitem [ref=e24]:
+          - link "X" [ref=e25] [cursor=pointer]:
+            - /url: https://x.com/memdexone
+        - listitem [ref=e26]:
+          - link "Telegram" [ref=e27] [cursor=pointer]:
+            - /url: https://t.me/memdexfoundation
+        - listitem [ref=e28]:
+          - link "Buy" [ref=e29] [cursor=pointer]:
+            - /url: "#how-to-buy"
+        - listitem [ref=e30]:
+          - link "FAQ" [ref=e31] [cursor=pointer]:
+            - /url: about.html
+      - link "Shopping Cart" [ref=e33] [cursor=pointer]:
+        - /url: "#"
+        - img [ref=e34]
+    - generic [ref=e38]:
+      - generic [ref=e40]:
+        - generic [ref=e41]:
+          - generic [ref=e43]:
+            - link "Bitcoin price":
+              - /url: https://www.livecoinwatch.com/price/Bitcoin-BTC
+              - img "Bitcoin price" [ref=e44] [cursor=pointer]
+            - generic: $ 73436.7-1.3%
+          - generic [ref=e46]:
+            - link "Ethereum price":
+              - /url: https://www.livecoinwatch.com/price/Ethereum-ETH
+              - img "Ethereum price" [ref=e47] [cursor=pointer]
+            - generic: $ 2004.66-0.9%
+          - generic [ref=e49]:
+            - link "Tether price":
+              - /url: https://www.livecoinwatch.com/price/Tether-USDT
+              - img "Tether price" [ref=e50] [cursor=pointer]
+            - generic: $ 0.99811-0.1%
+          - generic [ref=e52]:
+            - link "BNB price":
+              - /url: https://www.livecoinwatch.com/price/BNB-BNB
+              - img "BNB price" [ref=e53] [cursor=pointer]
+            - generic: $ 637.026-1.7%
+          - generic [ref=e55]:
+            - link "XRP price":
+              - /url: https://www.livecoinwatch.com/price/XRP-XRP
+              - img "XRP price" [ref=e56] [cursor=pointer]
+            - generic: $ 1.31352+0.3%
+          - generic [ref=e58]:
+            - link "USDC price":
+              - /url: https://www.livecoinwatch.com/price/USDC-USDC
+              - img "USDC price" [ref=e59] [cursor=pointer]
+            - generic: $ 0.99803-0.3%
+          - generic [ref=e61]:
+            - link "Solana price":
+              - /url: https://www.livecoinwatch.com/price/Solana-SOL
+              - img "Solana price" [ref=e62] [cursor=pointer]
+            - generic: $ 81.9627-0.6%
+          - generic [ref=e64]:
+            - link "TRON price":
+              - /url: https://www.livecoinwatch.com/price/TRON-TRX
+              - img "TRON price" [ref=e65] [cursor=pointer]
+            - generic: $ 0.35473-3.9%
+          - generic [ref=e67]:
+            - link "WhiteBIT Coin price":
+              - /url: https://www.livecoinwatch.com/price/WhiteBITCoin-WBT
+              - img "WhiteBIT Coin price" [ref=e68] [cursor=pointer]
+            - generic: $ 53.9322-1.3%
+          - generic [ref=e70]:
+            - link "Dogecoin price":
+              - /url: https://www.livecoinwatch.com/price/Dogecoin-DOGE
+              - img "Dogecoin price" [ref=e71] [cursor=pointer]
+            - generic: $ 0.09940-1.0%
+          - generic [ref=e73]:
+            - link "Cardano price":
+              - /url: https://www.livecoinwatch.com/price/Cardano-ADA
+              - img "Cardano price" [ref=e74] [cursor=pointer]
+            - generic: $ 0.23426-1.1%
+          - generic [ref=e76]:
+            - link "Zcash price":
+              - /url: https://www.livecoinwatch.com/price/Zcash-ZEC
+              - img "Zcash price" [ref=e77] [cursor=pointer]
+            - generic: $ 548.306+0.9%
+          - generic [ref=e79]:
+            - link "Stellar price":
+              - /url: https://www.livecoinwatch.com/price/Stellar-XLM
+              - img "Stellar price" [ref=e80] [cursor=pointer]
+            - generic: $ 0.20527+26.7%
+          - generic [ref=e82]:
+            - link "Monero price":
+              - /url: https://www.livecoinwatch.com/price/Monero-XMR
+              - img "Monero price" [ref=e83] [cursor=pointer]
+            - generic: $ 355.634-9.5%
+          - generic [ref=e85]:
+            - link "Chainlink price":
+              - /url: https://www.livecoinwatch.com/price/Chainlink-LINK
+              - img "Chainlink price" [ref=e86] [cursor=pointer]
+            - generic: $ 8.98169-1.8%
+          - generic [ref=e88]:
+            - link "Bitcoin Cash price":
+              - /url: https://www.livecoinwatch.com/price/BitcoinCash-BCH
+              - img "Bitcoin Cash price" [ref=e89] [cursor=pointer]
+            - generic: $ 297.768-12.0%
+          - generic [ref=e91]:
+            - link "Canton price":
+              - /url: https://www.livecoinwatch.com/price/Canton-__________________CC
+              - img "Canton price" [ref=e92] [cursor=pointer]
+            - generic: $ 0.15432-1.3%
+          - generic [ref=e94]:
+            - link "Dai price":
+              - /url: https://www.livecoinwatch.com/price/Dai-DAI
+              - img "Dai price" [ref=e95] [cursor=pointer]
+            - generic: $ 0.99840-0.2%
+          - generic [ref=e97]:
+            - link "Toncoin price":
+              - /url: https://www.livecoinwatch.com/price/Toncoin-TONCOIN
+              - img "Toncoin price" [ref=e98] [cursor=pointer]
+            - generic: $ 1.76341-3.8%
+          - generic [ref=e100]:
+            - link "Hedera Hashgraph price":
+              - /url: https://www.livecoinwatch.com/price/HederaHashgraph-HBAR
+              - img "Hedera Hashgraph price" [ref=e101] [cursor=pointer]
+            - generic: $ 0.09143+6.8%
+        - generic [ref=e102]:
+          - generic [ref=e104]:
+            - link "BTC" [ref=e105] [cursor=pointer]:
+              - /url: https://www.livecoinwatch.com/price/Bitcoin-BTC
+            - generic: $ 73436.7-1.3%
+          - generic [ref=e107]:
+            - link "ETH" [ref=e108] [cursor=pointer]:
+              - /url: https://www.livecoinwatch.com/price/Ethereum-ETH
+            - generic: $ 2004.66-0.9%
+          - generic [ref=e110]:
+            - link "USDT" [ref=e111] [cursor=pointer]:
+              - /url: https://www.livecoinwatch.com/price/Tether-USDT
+            - generic: $ 0.99811-0.1%
+          - generic [ref=e113]:
+            - link "BNB" [ref=e114] [cursor=pointer]:
+              - /url: https://www.livecoinwatch.com/price/BNB-BNB
+            - generic: $ 637.026-1.7%
+          - generic [ref=e116]:
+            - link "XRP" [ref=e117] [cursor=pointer]:
+              - /url: https://www.livecoinwatch.com/price/XRP-XRP
+            - generic: $ 1.31352+0.3%
+          - generic [ref=e119]:
+            - link "USDC" [ref=e120] [cursor=pointer]:
+              - /url: https://www.livecoinwatch.com/price/USDC-USDC
+            - generic: $ 0.99803-0.3%
+          - generic [ref=e122]:
+            - link "SOL" [ref=e123] [cursor=pointer]:
+              - /url: https://www.livecoinwatch.com/price/Solana-SOL
+            - generic: $ 81.9627-0.6%
+          - generic [ref=e125]:
+            - link "TRX" [ref=e126] [cursor=pointer]:
+              - /url: https://www.livecoinwatch.com/price/TRON-TRX
+            - generic: $ 0.35473-3.9%
+          - generic [ref=e128]:
+            - link "WBT" [ref=e129] [cursor=pointer]:
+              - /url: https://www.livecoinwatch.com/price/WhiteBITCoin-WBT
+            - generic: $ 53.9322-1.3%
+          - generic [ref=e131]:
+            - link "DOGE" [ref=e132] [cursor=pointer]:
+              - /url: https://www.livecoinwatch.com/price/Dogecoin-DOGE
+            - generic: $ 0.09940-1.0%
+          - generic [ref=e134]:
+            - link "ADA" [ref=e135] [cursor=pointer]:
+              - /url: https://www.livecoinwatch.com/price/Cardano-ADA
+            - generic: $ 0.23426-1.1%
+          - generic [ref=e137]:
+            - link "ZEC" [ref=e138] [cursor=pointer]:
+              - /url: https://www.livecoinwatch.com/price/Zcash-ZEC
+            - generic: $ 548.306+0.9%
+          - generic [ref=e140]:
+            - link "XLM" [ref=e141] [cursor=pointer]:
+              - /url: https://www.livecoinwatch.com/price/Stellar-XLM
+            - generic: $ 0.20527+26.7%
+          - generic [ref=e143]:
+            - link "XMR" [ref=e144] [cursor=pointer]:
+              - /url: https://www.livecoinwatch.com/price/Monero-XMR
+            - generic: $ 355.634-9.5%
+          - generic [ref=e146]:
+            - link "LINK" [ref=e147] [cursor=pointer]:
+              - /url: https://www.livecoinwatch.com/price/Chainlink-LINK
+            - generic: $ 8.98169-1.8%
+          - generic [ref=e149]:
+            - link "BCH" [ref=e150] [cursor=pointer]:
+              - /url: https://www.livecoinwatch.com/price/BitcoinCash-BCH
+            - generic: $ 297.768-12.0%
+          - generic [ref=e152]:
+            - link "CC" [ref=e153] [cursor=pointer]:
+              - /url: https://www.livecoinwatch.com/price/Canton-__________________CC
+            - generic: $ 0.15432-1.3%
+          - generic [ref=e155]:
+            - link "DAI" [ref=e156] [cursor=pointer]:
+              - /url: https://www.livecoinwatch.com/price/Dai-DAI
+            - generic: $ 0.99840-0.2%
+          - generic [ref=e158]:
+            - link "TONCOIN" [ref=e159] [cursor=pointer]:
+              - /url: https://www.livecoinwatch.com/price/Toncoin-TONCOIN
+            - generic: $ 1.76341-3.8%
+          - generic [ref=e161]:
+            - link "HBAR" [ref=e162] [cursor=pointer]:
+              - /url: https://www.livecoinwatch.com/price/HederaHashgraph-HBAR
+            - generic: $ 0.09143+6.8%
+      - generic [ref=e165]:
+        - generic [ref=e167]:
+          - link "Bitcoin Bitcoin BTC $73,468.00 1.2%" [ref=e168] [cursor=pointer]:
+            - /url: https://www.coingecko.com/resource_redirect?locale=en&route=coins%2Fbitcoin&utm_source=localhost%3A8000&utm_medium=undefined&utm_content=undefined
+            - generic [ref=e169]:
+              - generic [ref=e170]:
+                - img "Bitcoin" [ref=e171]
+                - generic [ref=e172]: Bitcoin
+                - generic [ref=e173]: BTC
+              - generic [ref=e174]:
+                - generic [ref=e175]: $73,468.00
+                - generic [ref=e176]:
+                  - img [ref=e177]
+                  - text: 1.2%
+          - link "Solana Solana SOL $81.98 0.6%" [ref=e179] [cursor=pointer]:
+            - /url: https://www.coingecko.com/resource_redirect?locale=en&route=coins%2Fsolana&utm_source=localhost%3A8000&utm_medium=undefined&utm_content=undefined
+            - generic [ref=e180]:
+              - generic [ref=e181]:
+                - img "Solana" [ref=e182]
+                - generic [ref=e183]: Solana
+                - generic [ref=e184]: SOL
+              - generic [ref=e185]:
+                - generic [ref=e186]: $81.98
+                - generic [ref=e187]:
+                  - img [ref=e188]
+                  - text: 0.6%
+          - link "Dogecoin Dogecoin DOGE $0.09941 0.9%" [ref=e190] [cursor=pointer]:
+            - /url: https://www.coingecko.com/resource_redirect?locale=en&route=coins%2Fdogecoin&utm_source=localhost%3A8000&utm_medium=undefined&utm_content=undefined
+            - generic [ref=e191]:
+              - generic [ref=e192]:
+                - img "Dogecoin" [ref=e193]
+                - generic [ref=e194]: Dogecoin
+                - generic [ref=e195]: DOGE
+              - generic [ref=e196]:
+                - generic [ref=e197]: $0.09941
+                - generic [ref=e198]:
+                  - img [ref=e199]
+                  - text: 0.9%
+          - link "NEAR Protocol NEAR Protocol NEAR $2.44 3.4%" [ref=e201] [cursor=pointer]:
+            - /url: https://www.coingecko.com/resource_redirect?locale=en&route=coins%2Fnear&utm_source=localhost%3A8000&utm_medium=undefined&utm_content=undefined
+            - generic [ref=e202]:
+              - generic [ref=e203]:
+                - img "NEAR Protocol" [ref=e204]
+                - generic [ref=e205]: NEAR Protocol
+                - generic [ref=e206]: NEAR
+              - generic [ref=e207]:
+                - generic [ref=e208]: $2.44
+                - generic [ref=e209]:
+                  - img [ref=e210]
+                  - text: 3.4%
+          - link "Shiba Inu Shiba Inu SHIB $0.05535 1.3%" [ref=e212] [cursor=pointer]:
+            - /url: https://www.coingecko.com/resource_redirect?locale=en&route=coins%2Fshiba-inu&utm_source=localhost%3A8000&utm_medium=undefined&utm_content=undefined
+            - generic [ref=e213]:
+              - generic [ref=e214]:
+                - img "Shiba Inu" [ref=e215]
+                - generic [ref=e216]: Shiba Inu
+                - generic [ref=e217]: SHIB
+              - generic [ref=e218]:
+                - generic [ref=e219]:
+                  - text: $0.0
+                  - subscript [ref=e220]: "5"
+                  - text: "535"
+                - generic [ref=e221]:
+                  - img [ref=e222]
+                  - text: 1.3%
+          - link "Pepe Pepe PEPE $0.05338 2.4%" [ref=e224] [cursor=pointer]:
+            - /url: https://www.coingecko.com/resource_redirect?locale=en&route=coins%2Fpepe&utm_source=localhost%3A8000&utm_medium=undefined&utm_content=undefined
+            - generic [ref=e225]:
+              - generic [ref=e226]:
+                - img "Pepe" [ref=e227]
+                - generic [ref=e228]: Pepe
+                - generic [ref=e229]: PEPE
+              - generic [ref=e230]:
+                - generic [ref=e231]:
+                  - text: $0.0
+                  - subscript [ref=e232]: "5"
+                  - text: "338"
+                - generic [ref=e233]:
+                  - img [ref=e234]
+                  - text: 2.4%
+          - link "Aurora Aurora AURORA $0.02728 4.8%" [ref=e236] [cursor=pointer]:
+            - /url: https://www.coingecko.com/resource_redirect?locale=en&route=coins%2Faurora-near&utm_source=localhost%3A8000&utm_medium=undefined&utm_content=undefined
+            - generic [ref=e237]:
+              - generic [ref=e238]:
+                - img "Aurora" [ref=e239]
+                - generic [ref=e240]: Aurora
+                - generic [ref=e241]: AURORA
+              - generic [ref=e242]:
+                - generic [ref=e243]: $0.02728
+                - generic [ref=e244]:
+                  - img [ref=e245]
+                  - text: 4.8%
+          - link "MEMDEX100 MEMDEX100 MEMDEX $0.002044 1.2%" [ref=e247] [cursor=pointer]:
+            - /url: https://www.coingecko.com/resource_redirect?locale=en&route=coins%2Fmemdex100&utm_source=localhost%3A8000&utm_medium=undefined&utm_content=undefined
+            - generic [ref=e248]:
+              - generic [ref=e249]:
+                - img "MEMDEX100" [ref=e250]
+                - generic [ref=e251]: MEMDEX100
+                - generic [ref=e252]: MEMDEX
+              - generic [ref=e253]:
+                - generic [ref=e254]: $0.002044
+                - generic [ref=e255]:
+                  - img [ref=e256]
+                  - text: 1.2%
+          - link "Powered by" [ref=e259] [cursor=pointer]:
+            - /url: https://www.coingecko.com/?utm_source=localhost%3A8000&utm_medium=coin_price_marquee_widget&utm_content=null
+            - generic [ref=e260]:
+              - generic [ref=e261]: Powered by
+              - img [ref=e262]
+              - img [ref=e272]
+        - generic [ref=e284]:
+          - link "Bitcoin Bitcoin BTC $73,468.00 1.2%" [ref=e285] [cursor=pointer]:
+            - /url: https://www.coingecko.com/resource_redirect?locale=en&route=coins%2Fbitcoin&utm_source=localhost%3A8000&utm_medium=undefined&utm_content=undefined
+            - generic [ref=e286]:
+              - generic [ref=e287]:
+                - img "Bitcoin" [ref=e288]
+                - generic [ref=e289]: Bitcoin
+                - generic [ref=e290]: BTC
+              - generic [ref=e291]:
+                - generic [ref=e292]: $73,468.00
+                - generic [ref=e293]:
+                  - img [ref=e294]
+                  - text: 1.2%
+          - link "Solana Solana SOL $81.98 0.6%" [ref=e296] [cursor=pointer]:
+            - /url: https://www.coingecko.com/resource_redirect?locale=en&route=coins%2Fsolana&utm_source=localhost%3A8000&utm_medium=undefined&utm_content=undefined
+            - generic [ref=e297]:
+              - generic [ref=e298]:
+                - img "Solana" [ref=e299]
+                - generic [ref=e300]: Solana
+                - generic [ref=e301]: SOL
+              - generic [ref=e302]:
+                - generic [ref=e303]: $81.98
+                - generic [ref=e304]:
+                  - img [ref=e305]
+                  - text: 0.6%
+          - link "Dogecoin Dogecoin DOGE $0.09941 0.9%" [ref=e307] [cursor=pointer]:
+            - /url: https://www.coingecko.com/resource_redirect?locale=en&route=coins%2Fdogecoin&utm_source=localhost%3A8000&utm_medium=undefined&utm_content=undefined
+            - generic [ref=e308]:
+              - generic [ref=e309]:
+                - img "Dogecoin" [ref=e310]
+                - generic [ref=e311]: Dogecoin
+                - generic [ref=e312]: DOGE
+              - generic [ref=e313]:
+                - generic [ref=e314]: $0.09941
+                - generic [ref=e315]:
+                  - img [ref=e316]
+                  - text: 0.9%
+          - link "NEAR Protocol NEAR Protocol NEAR $2.44 3.4%" [ref=e318] [cursor=pointer]:
+            - /url: https://www.coingecko.com/resource_redirect?locale=en&route=coins%2Fnear&utm_source=localhost%3A8000&utm_medium=undefined&utm_content=undefined
+            - generic [ref=e319]:
+              - generic [ref=e320]:
+                - img "NEAR Protocol" [ref=e321]
+                - generic [ref=e322]: NEAR Protocol
+                - generic [ref=e323]: NEAR
+              - generic [ref=e324]:
+                - generic [ref=e325]: $2.44
+                - generic [ref=e326]:
+                  - img [ref=e327]
+                  - text: 3.4%
+          - link "Shiba Inu Shiba Inu SHIB $0.05535 1.3%" [ref=e329] [cursor=pointer]:
+            - /url: https://www.coingecko.com/resource_redirect?locale=en&route=coins%2Fshiba-inu&utm_source=localhost%3A8000&utm_medium=undefined&utm_content=undefined
+            - generic [ref=e330]:
+              - generic [ref=e331]:
+                - img "Shiba Inu" [ref=e332]
+                - generic [ref=e333]: Shiba Inu
+                - generic [ref=e334]: SHIB
+              - generic [ref=e335]:
+                - generic [ref=e336]:
+                  - text: $0.0
+                  - subscript [ref=e337]: "5"
+                  - text: "535"
+                - generic [ref=e338]:
+                  - img [ref=e339]
+                  - text: 1.3%
+          - link "Pepe Pepe PEPE $0.05338 2.4%" [ref=e341] [cursor=pointer]:
+            - /url: https://www.coingecko.com/resource_redirect?locale=en&route=coins%2Fpepe&utm_source=localhost%3A8000&utm_medium=undefined&utm_content=undefined
+            - generic [ref=e342]:
+              - generic [ref=e343]:
+                - img "Pepe" [ref=e344]
+                - generic [ref=e345]: Pepe
+                - generic [ref=e346]: PEPE
+              - generic [ref=e347]:
+                - generic [ref=e348]:
+                  - text: $0.0
+                  - subscript [ref=e349]: "5"
+                  - text: "338"
+                - generic [ref=e350]:
+                  - img [ref=e351]
+                  - text: 2.4%
+          - link "Aurora Aurora AURORA $0.02728 4.8%" [ref=e353] [cursor=pointer]:
+            - /url: https://www.coingecko.com/resource_redirect?locale=en&route=coins%2Faurora-near&utm_source=localhost%3A8000&utm_medium=undefined&utm_content=undefined
+            - generic [ref=e354]:
+              - generic [ref=e355]:
+                - img "Aurora" [ref=e356]
+                - generic [ref=e357]: Aurora
+                - generic [ref=e358]: AURORA
+              - generic [ref=e359]:
+                - generic [ref=e360]: $0.02728
+                - generic [ref=e361]:
+                  - img [ref=e362]
+                  - text: 4.8%
+          - link "MEMDEX100 MEMDEX100 MEMDEX $0.002044 1.2%" [ref=e364] [cursor=pointer]:
+            - /url: https://www.coingecko.com/resource_redirect?locale=en&route=coins%2Fmemdex100&utm_source=localhost%3A8000&utm_medium=undefined&utm_content=undefined
+            - generic [ref=e365]:
+              - generic [ref=e366]:
+                - img "MEMDEX100" [ref=e367]
+                - generic [ref=e368]: MEMDEX100
+                - generic [ref=e369]: MEMDEX
+              - generic [ref=e370]:
+                - generic [ref=e371]: $0.002044
+                - generic [ref=e372]:
+                  - img [ref=e373]
+                  - text: 1.2%
+          - link "Powered by" [ref=e376] [cursor=pointer]:
+            - /url: https://www.coingecko.com/?utm_source=localhost%3A8000&utm_medium=coin_price_marquee_widget&utm_content=null
+            - generic [ref=e377]:
+              - generic [ref=e378]: Powered by
+              - img [ref=e379]
+              - img [ref=e389]
+  - main [ref=e400]:
+    - generic [ref=e403]:
+      - generic [ref=e404]:
+        - generic [ref=e405]: More than a memecoin
+        - heading "Join the Revolution Community Run Utility Based" [level=1] [ref=e406]:
+          - text: Join the Revolution
+          - text: Community Run
+          - text: Utility Based
+        - paragraph [ref=e407]: The community memecoin building real utility. Revolutionary automated portfolio management spanning up to 100 digital assets across the cryptoverse!
+        - generic [ref=e409]:
+          - paragraph [ref=e410]: Official Contract Address
+          - generic [ref=e411]:
+            - code [ref=e412]: 83iBDw3ZpxqJ3pEzrbttr9fGA57tttehDAxoFyR1moon
+            - button "Copy" [ref=e413] [cursor=pointer]
+        - generic [ref=e414]:
+          - link "@memdexone" [ref=e415] [cursor=pointer]:
+            - /url: https://x.com/memdexone
+            - img [ref=e416]
+            - text: "@memdexone"
+          - link "Telegram" [ref=e418] [cursor=pointer]:
+            - /url: https://t.me/memdexfoundation
+            - img [ref=e419]
+            - text: Telegram
+          - link "Instagram" [ref=e421] [cursor=pointer]:
+            - /url: https://www.instagram.com/memdexone
+            - img [ref=e422]
+            - text: Instagram
+      - generic [ref=e424]:
+        - img "$MEMDEX Community" [ref=e426]
+        - generic [ref=e429]:
+          - generic [ref=e430]:
+            - generic [ref=e432]:
+              - img "MEMDEX100" [ref=e433]
+              - generic [ref=e434]:
+                - generic [ref=e435]: MEMDEX100
+                - generic [ref=e436]: MEMDEX/USD
+            - generic [ref=e438]:
+              - generic [ref=e439]: $0.002039
+              - generic [ref=e440]:
+                - img [ref=e441]
+                - text: 1.7%
+          - img [ref=e446]
+          - link "Powered by" [ref=e456] [cursor=pointer]:
+            - /url: https://www.coingecko.com/
+            - generic [ref=e457]:
+              - generic [ref=e458]: Powered by
+              - img [ref=e459]
+              - img [ref=e469]
+    - generic [ref=e482]:
+      - generic [ref=e483]:
+        - heading "The Vision Behind $MEMDEX" [level=2] [ref=e484]
+        - paragraph [ref=e485]: Crypto is fragmented. Hundreds of tokens across dozens of sectors, and managing them manually is a full-time job.
+      - generic [ref=e487]:
+        - generic [ref=e488]:
+          - generic [ref=e489]: 🔀
+          - heading "Too Many Tokens" [level=4] [ref=e490]
+          - paragraph [ref=e491]: Thousands of projects across Blue Chips, Memecoins, RWA, AI, DeFi, and Gaming. No one can track them all.
+        - generic [ref=e492]:
+          - generic [ref=e493]: ⏱️
+          - heading "Constant Monitoring" [level=4] [ref=e494]
+          - paragraph [ref=e495]: Markets move 24/7. Manual rebalancing means missed opportunities and emotional decisions.
+        - generic [ref=e496]:
+          - generic [ref=e497]: 💸
+          - heading "High Costs" [level=4] [ref=e498]
+          - paragraph [ref=e499]: Gas fees, exchange fees, and slippage eat into returns. Diversification shouldn't cost a fortune.
+      - paragraph [ref=e501]:
+        - emphasis [ref=e502]: What if one platform could handle all of it... all at once?
+    - generic [ref=e505]:
+      - generic [ref=e507]:
+        - paragraph [ref=e508]: Introducing
+        - heading "Memdex One" [level=2] [ref=e509]
+      - generic [ref=e510]:
+        - img "Memdex One App Mockup" [ref=e512]
+        - generic [ref=e513]:
+          - heading "Instant, intelligent diversification" [level=3] [ref=e514]
+          - paragraph [ref=e515]: "The MemDex Automated Portfolio will deliver:"
+          - list [ref=e516]:
+            - listitem [ref=e517]:
+              - generic [ref=e519]: Diversification across 100 digital assets in one click
+            - listitem [ref=e520]:
+              - generic [ref=e522]: Blue Chips, Memecoins, RWA's, and cutting-edge Utility projects
+            - listitem [ref=e523]:
+              - generic [ref=e525]: AI, DeFi, Gaming - managed by a dynamic AI Evaluation System
+            - listitem [ref=e526]:
+              - generic [ref=e528]: Superior efficiency, reduced fees, optimized trades
+            - listitem [ref=e529]:
+              - generic [ref=e531]: Portfolio growth on the cutting edge of blockchain innovation
+          - link "Visit MemdexOne.com" [ref=e533] [cursor=pointer]:
+            - /url: https://memdexone.com
+      - generic [ref=e534]:
+        - generic [ref=e535]: The MemDex Automated Portfolio
+        - heading "The Whole Market, All At Once" [level=3] [ref=e536]
+        - paragraph [ref=e537]: Decentralized · AI-Powered · Multi-sector · Cross-chain
+      - generic [ref=e538]:
+        - generic [ref=e540]:
+          - generic [ref=e541]: Up To
+          - generic [ref=e542]: "0"
+          - generic [ref=e543]: Digital Assets
+        - generic [ref=e545]:
+          - generic [ref=e546]: "0"
+          - generic [ref=e547]: Market Sectors
+        - generic [ref=e549]:
+          - generic [ref=e550]: "0"
+          - generic [ref=e551]: Minute Intervals
+          - generic [ref=e552]: Automatic Rebalancing
+        - generic [ref=e554]:
+          - generic [ref=e555]: 24/7
+          - generic [ref=e556]: AI Research
+      - generic [ref=e557]:
+        - paragraph [ref=e558]:
+          - strong [ref=e559]: Blue Chips, Memecoins, RWA's, AI/Utility Tokens
+          - text: One click to automate your portfolio
+        - generic [ref=e560]: Coming Soon
+    - generic [ref=e563]:
+      - generic [ref=e564]:
+        - heading "Memdex Official Merch" [level=2] [ref=e565]
+        - paragraph [ref=e566]: Exclusive merch inspired by, and made for, the community
+      - link "Memdex Official Merch" [ref=e569] [cursor=pointer]:
+        - /url: "#"
+        - img "Memdex Official Merch" [ref=e570]
+      - link "Shop Now" [ref=e572] [cursor=pointer]:
+        - /url: "#"
+    - generic [ref=e575]:
+      - generic [ref=e576]:
+        - generic [ref=e577]: Get Started
+        - heading "How to Buy $MEMDEX" [level=2] [ref=e578]
+        - paragraph [ref=e579]: Get your $MEMDEX tokens in three simple steps
+      - generic [ref=e581]:
+        - generic [ref=e582]:
+          - generic [ref=e583]: "1"
+          - heading "Get a Wallet" [level=4] [ref=e584]
+          - paragraph [ref=e585]:
+            - text: Download
+            - strong [ref=e586]: Phantom
+            - text: or
+            - strong [ref=e587]: Solflare
+            - text: "- the most popular Solana wallets"
+        - img [ref=e589]
+        - generic [ref=e591]:
+          - generic [ref=e592]: "2"
+          - heading "Buy SOL" [level=4] [ref=e593]
+          - paragraph [ref=e594]:
+            - text: Purchase
+            - strong [ref=e595]: SOL
+            - text: on any exchange and send it to your wallet
+        - img [ref=e597]
+        - generic [ref=e599]:
+          - generic [ref=e600]: "3"
+          - heading "Swap for $MEMDEX" [level=4] [ref=e601]
+          - paragraph [ref=e602]:
+            - text: Swap SOL for
+            - strong [ref=e603]: $MEMDEX
+            - text: on Jupiter or Raydium using the CA below
+      - generic [ref=e606]:
+        - paragraph [ref=e607]: Official Contract Address
+        - generic [ref=e608]:
+          - code [ref=e609]: 83iBDw3ZpxqJ3pEzrbttr9fGA57tttehDAxoFyR1moon
+          - button "Copy" [ref=e610] [cursor=pointer]
+    - generic [ref=e614]:
+      - link "Good Morning Memdex Show - Live on X Spaces" [ref=e616] [cursor=pointer]:
+        - /url: gmm.html
+        - img "Good Morning Memdex Show - Live on X Spaces" [ref=e617]
+      - generic [ref=e618]:
+        - generic [ref=e619]: Weekly X Spaces
+        - heading "Good Morning Memdex Show" [level=2] [ref=e620]:
+          - text: Good Morning
+          - text: Memdex Show
+        - paragraph [ref=e621]: Our weekly X Spaces show where we talk $MEMDEX, the Memdex Automated Portfolio, and all things crypto.
+        - paragraph [ref=e622]: Every Friday at 11:00 AM EST
+        - list [ref=e623]:
+          - listitem [ref=e624]:
+            - generic [ref=e626]: Live $MEMDEX & portfolio updates
+          - listitem [ref=e627]:
+            - generic [ref=e629]: Market analysis
+          - listitem [ref=e630]:
+            - generic [ref=e632]: Community voices & guest speakers
+        - generic [ref=e633]:
+          - link "Follow @memdexone" [ref=e634] [cursor=pointer]:
+            - /url: https://x.com/memdexone
+          - link "Learn More" [ref=e635] [cursor=pointer]:
+            - /url: gmm.html
+  - contentinfo [ref=e636]:
+    - generic [ref=e637]:
+      - generic [ref=e638]:
+        - generic [ref=e639]:
+          - generic [ref=e640]:
+            - img "MemDex100" [ref=e641]
+            - generic [ref=e642]: MemDex100
+          - paragraph [ref=e643]: $MEMDEX - the community memecoin with real utility. Revolutionary automated portfolio management spanning up to 100 digital assets across the cryptoverse!
+          - paragraph [ref=e644]: You can also check us out @
+          - generic [ref=e645]:
+            - link "Twitter memdexone" [ref=e646] [cursor=pointer]:
+              - /url: https://x.com/memdexone
+              - img [ref=e647]
+            - link "Telegram" [ref=e649] [cursor=pointer]:
+              - /url: https://t.me/memdexfoundation
+              - img [ref=e650]
+            - link "Instagram" [ref=e652] [cursor=pointer]:
+              - /url: https://www.instagram.com/memdexone
+              - img [ref=e653]
+          - generic [ref=e656]:
+            - paragraph [ref=e657]: "Official CA:"
+            - code [ref=e658]: 83iBDw3ZpxqJ3pEzrbttr9fGA57tttehDAxoFyR1moon
+        - generic [ref=e659]:
+          - heading "Quick Links" [level=4] [ref=e660]
+          - list [ref=e661]:
+            - listitem [ref=e662]:
+              - link "Home" [ref=e663] [cursor=pointer]:
+                - /url: index.html
+            - listitem [ref=e664]:
+              - link "Merch" [ref=e665] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e666]:
+              - link "GMM Show" [ref=e667] [cursor=pointer]:
+                - /url: gmm.html
+            - listitem [ref=e668]:
+              - link "Coffee" [ref=e669] [cursor=pointer]:
+                - /url: coffee.html
+            - listitem [ref=e670]:
+              - link "FAQ" [ref=e671] [cursor=pointer]:
+                - /url: about.html#faq
+        - generic [ref=e672]:
+          - heading "Community" [level=4] [ref=e673]
+          - list [ref=e674]:
+            - listitem [ref=e675]:
+              - link "X (Twitter)" [ref=e676] [cursor=pointer]:
+                - /url: https://x.com/memdexone
+            - listitem [ref=e677]:
+              - link "Telegram" [ref=e678] [cursor=pointer]:
+                - /url: https://t.me/memdexfoundation
+            - listitem [ref=e679]:
+              - link "Instagram" [ref=e680] [cursor=pointer]:
+                - /url: https://www.instagram.com/memdexone
+            - listitem [ref=e681]:
+              - link "CoinGecko" [ref=e682] [cursor=pointer]:
+                - /url: https://www.coingecko.com/en/coins/memdex100
+        - generic [ref=e683]:
+          - heading "Subscribe For Updates" [level=4] [ref=e684]
+          - generic [ref=e685]:
+            - textbox "Enter your email" [ref=e686]
+            - button "→" [ref=e687] [cursor=pointer]
+          - heading "Legal" [level=4] [ref=e688]
+          - list [ref=e689]:
+            - listitem [ref=e690]:
+              - link "Terms of Service" [ref=e691] [cursor=pointer]:
+                - /url: terms.html
+            - listitem [ref=e692]:
+              - link "Privacy Policy" [ref=e693] [cursor=pointer]:
+                - /url: privacy.html
+            - listitem [ref=e694]:
+              - link "Refund Policy" [ref=e695] [cursor=pointer]:
+                - /url: refund.html
+      - paragraph [ref=e697]: © 2025 Web Design by Memdex100

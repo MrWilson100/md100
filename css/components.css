@@ -4,6 +4,156 @@
    ============================================ */
 
 /* =============================================
+   EARLY ACCESS PROMO BAR (top of nav)
+   ============================================= */
+.promo-bar {
+  position: relative;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  text-decoration: none;
+  background: linear-gradient(90deg, #0017A8 0%, #0029FE 28%, #0E5099 62%, #209EE0 100%);
+  background-size: 220% 100%;
+  animation: promoGradient 9s ease-in-out infinite;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 2px 14px rgba(0, 41, 254, 0.4), 0 1px 0 0 rgba(255, 255, 255, 0.12) inset;
+}
+
+@keyframes promoGradient {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.promo-bar-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  max-width: var(--max-width-wide);
+  margin: 0 auto;
+  padding: 0.55rem var(--space-xl);
+  flex-wrap: wrap;
+}
+
+.promo-bar-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex-shrink: 0;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.13);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  padding: 0.22rem 0.62rem;
+  border-radius: var(--radius-full);
+}
+
+.promo-bar-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--radioactive-grass);
+  box-shadow: 0 0 8px var(--radioactive-grass);
+  animation: promoPulse 1.8s ease-in-out infinite;
+}
+
+@keyframes promoPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.35; transform: scale(0.65); }
+}
+
+.promo-bar-text {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.promo-bar-text strong {
+  color: #fff;
+  font-weight: 700;
+}
+
+.promo-bar-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-shrink: 0;
+  background: #fff;
+  color: #0029FE;
+  font-size: 0.84rem;
+  font-weight: 700;
+  padding: 0.42rem 1rem;
+  border-radius: var(--radius-full);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.28);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.promo-bar:hover .promo-bar-cta {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.38);
+}
+
+.promo-bar-cta svg {
+  transition: transform var(--transition-fast);
+  animation: promoArrowNudge 1.6s ease-in-out infinite;
+}
+
+@keyframes promoArrowNudge {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(4px); }
+}
+
+.promo-bar:hover .promo-bar-cta svg {
+  animation: none;
+  transform: translateX(4px);
+}
+
+/* Light sweep across the bar */
+.promo-bar-sheen {
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 45%;
+  height: 100%;
+  z-index: 1;
+  transform: skewX(-20deg);
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.22), transparent);
+  animation: promoSheen 7s ease-in-out infinite;
+}
+
+@keyframes promoSheen {
+  0% { left: -60%; }
+  40%, 100% { left: 140%; }
+}
+
+@media (max-width: 768px) {
+  .promo-bar-content {
+    gap: 0.55rem;
+    padding: 0.45rem var(--space-md);
+  }
+  .promo-bar-badge { display: none; }
+  .promo-bar-text { font-size: 0.78rem; }
+  .promo-bar-cta { font-size: 0.78rem; padding: 0.36rem 0.8rem; }
+}
+
+@media (max-width: 480px) {
+  .promo-bar-text { font-size: 0.72rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .promo-bar { animation: none; }
+  .promo-bar-sheen { animation: none; display: none; }
+  .promo-bar-dot { animation: none; }
+  .promo-bar-cta svg { animation: none; }
+}
+
+/* =============================================
    CRYPTO TICKER BAR (inside nav)
    ============================================= */
 .ticker-bar {
