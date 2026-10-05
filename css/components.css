@@ -1438,6 +1438,10 @@ body.modal-open {
   transition: max-height var(--transition-slow);
 }
 
+.accordion-item.open .accordion-body {
+  max-height: none;
+}
+
 .accordion-body-inner {
   padding: 0 var(--space-lg) var(--space-lg);
   color: var(--color-text-muted);

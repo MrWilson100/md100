@@ -5,6 +5,18 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  // ========== FAQ Accordion ==========
+  document.querySelectorAll('.accordion-header').forEach(header => {
+    const item = header.closest('.accordion-item');
+    const body = item.querySelector('.accordion-body');
+    header.addEventListener('click', () => {
+      const expanded = header.getAttribute('aria-expanded') !== 'true';
+      header.setAttribute('aria-expanded', String(expanded));
+      item.classList.toggle('open', expanded);
+      body.hidden = !expanded;
+    });
+  });
+
   // ========== Nav Height (menu + tickers) ==========
   const navEl = document.querySelector('.nav');
   if (navEl) {
