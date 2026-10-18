@@ -17,93 +17,150 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ========== Nav Height (menu + tickers) ==========
-  const navEl = document.querySelector('.nav');
-  if (navEl) {
-    const updateNavPadding = () => {
-      const h = navEl.offsetHeight;
-      document.body.style.paddingTop = h + 'px';
-    };
-    updateNavPadding();
-    setTimeout(updateNavPadding, 500);
-    setTimeout(updateNavPadding, 1500);
-    setTimeout(updateNavPadding, 3000);
-    window.addEventListener('resize', updateNavPadding, { passive: true });
-
-    // Ticker hide/show on scroll direction
-    const tickerBar = navEl.querySelector('.ticker-bar');
-    if (tickerBar) {
-      let lastScrollY = window.scrollY;
-      let ticking = false;
-
-      window.addEventListener('scroll', () => {
-        if (!ticking) {
-          requestAnimationFrame(() => {
-            const currentY = window.scrollY;
-            if (currentY > lastScrollY && currentY > 80) {
-              tickerBar.classList.add('ticker-hidden');
-            } else {
-              tickerBar.classList.remove('ticker-hidden');
-            }
-            lastScrollY = currentY;
-            // Update body padding since nav height changes
-            updateNavPadding();
-            ticking = false;
-          });
-          ticking = true;
-        }
-      }, { passive: true });
-    }
-  }
-
-  // ========== Sticky Navigation ==========
+  // ========== Scroll-Delta Header ==========
   const nav = document.querySelector('.nav');
   if (nav) {
-    let lastScrollY = window.scrollY;
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      nav.classList.toggle('nav-scrolled', currentScrollY > 50);
+    const spacer = document.createElement('div');
+    spacer.className = 'nav-spacer';
+    spacer.setAttribute('aria-hidden', 'true');
+    nav.after(spacer);
 
-      // Hide/show nav on mobile based on scroll direction
-      if (currentScrollY > 100 && currentScrollY > lastScrollY) {
-        nav.classList.add('nav-hidden');
-      } else {
-        nav.classList.remove('nav-hidden');
-      }
-      lastScrollY = currentScrollY;
+    let maxScrollY = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+    const measureScrollBounds = () => {
+      maxScrollY = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
     };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    // Run once on load in case page is already scrolled
-    handleScroll();
+    const scrollPosition = () => Math.max(0, Math.min(window.scrollY, maxScrollY));
+    let navHeight = nav.getBoundingClientRect().height;
+    let lastScrollY = scrollPosition();
+    let hiddenOffset = Math.min(lastScrollY, navHeight);
+    let renderedOffset;
+    let renderQueued = false;
+    const renderHeader = () => {
+      if (hiddenOffset !== renderedOffset) {
+        // A direct transform avoids invalidating inherited styles in both tickers.
+        nav.style.transform = `translate3d(0, ${-hiddenOffset}px, 0)`;
+        renderedOffset = hiddenOffset;
+      }
+      // Fully hidden links must not receive keyboard focus.
+      const fullyHidden = hiddenOffset >= navHeight;
+      if (nav.inert !== fullyHidden) nav.inert = fullyHidden;
+    };
+    const queueHeaderRender = () => {
+      if (renderQueued) return;
+      renderQueued = true;
+      requestAnimationFrame(() => {
+        renderQueued = false;
+        renderHeader();
+      });
+    };
+
+    spacer.style.height = navHeight + 'px';
+    nav.classList.add('nav-fixed');
+    renderHeader();
+
+    const measureHeader = () => {
+      const nextHeight = nav.getBoundingClientRect().height;
+      if (nextHeight === navHeight) return;
+      const wasHidden = hiddenOffset >= navHeight;
+      navHeight = nextHeight;
+      // Only a genuine size change updates layout, never hide/reveal scrolling.
+      spacer.style.height = navHeight + 'px';
+      measureScrollBounds();
+      lastScrollY = scrollPosition();
+      hiddenOffset = Math.min(wasHidden ? navHeight : hiddenOffset, navHeight, lastScrollY);
+      renderHeader();
+    };
+    let measureQueued = false;
+    new ResizeObserver(() => {
+      if (measureQueued) return;
+      measureQueued = true;
+      // Writing the spacer inside observer delivery can cause WebKit resize loops.
+      requestAnimationFrame(() => {
+        measureQueued = false;
+        measureHeader();
+      });
+    }).observe(nav);
+    new ResizeObserver(measureScrollBounds).observe(document.body);
+    // Mobile browser controls can resize the viewport during a scroll gesture.
+    // Updating bounds must not consume the pending scroll delta or rewrite layout.
+    window.addEventListener('resize', measureScrollBounds, { passive: true });
+
+    window.addEventListener('scroll', () => {
+      const currentY = scrollPosition();
+      if (!document.body.classList.contains('modal-open')) {
+        const nextOffset = Math.max(0, Math.min(
+          hiddenOffset + currentY - lastScrollY,
+          navHeight,
+          currentY
+        ));
+        if (nextOffset !== hiddenOffset) {
+          hiddenOffset = nextOffset;
+          // Accumulate every direction change, then write once before this paint.
+          queueHeaderRender();
+        }
+      }
+      // Clamp overscroll and rebase while locked, avoiding bounce/reopen jumps.
+      lastScrollY = currentY;
+    }, { passive: true });
   }
 
   // ========== Hamburger / Mobile Menu ==========
   const hamburger = document.querySelector('.hamburger');
   const mobileMenu = document.querySelector('.mobile-menu');
   if (hamburger && mobileMenu) {
+    // Keep menu links below the currently visible part of the header.
+    const updateMenuOffset = () => {
+      const bottom = nav ? Math.max(0, nav.getBoundingClientRect().bottom) : 0;
+      mobileMenu.style.setProperty('--menu-header-height', bottom + 'px');
+    };
+    const setMenuOpen = (open) => {
+      if (open) updateMenuOffset();
+      hamburger.classList.toggle('active', open);
+      hamburger.setAttribute('aria-expanded', String(open));
+      mobileMenu.classList.toggle('open', open);
+      mobileMenu.setAttribute('aria-hidden', String(!open));
+      document.body.classList.toggle('modal-open', open);
+    };
+
     hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('active');
-      mobileMenu.classList.toggle('open');
-      document.body.classList.toggle('modal-open');
+      setMenuOpen(!mobileMenu.classList.contains('open'));
     });
 
     // Close on link click
     mobileMenu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        mobileMenu.classList.remove('open');
-        document.body.classList.remove('modal-open');
+        setMenuOpen(false);
       });
     });
 
     // Close on overlay click (the mobile menu background)
     mobileMenu.addEventListener('click', (e) => {
       if (e.target === mobileMenu) {
-        hamburger.classList.remove('active');
-        mobileMenu.classList.remove('open');
-        document.body.classList.remove('modal-open');
+        setMenuOpen(false);
       }
     });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+        setMenuOpen(false);
+        hamburger.focus();
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      if (!mobileMenu.classList.contains('open')) return;
+      if (window.innerWidth > 768) {
+        setMenuOpen(false);
+      } else {
+        updateMenuOffset();
+      }
+    }, { passive: true });
+
+    if (nav) {
+      new ResizeObserver(() => {
+        if (mobileMenu.classList.contains('open')) updateMenuOffset();
+      }).observe(nav);
+    }
   }
 
   // ========== Smooth Scroll for Anchor Links ==========
@@ -116,12 +173,11 @@ document.addEventListener('DOMContentLoaded', () => {
       const target = document.querySelector(href);
       if (target) {
         e.preventDefault();
-        const offset = parseInt(
-          getComputedStyle(document.documentElement)
-            .getPropertyValue('--nav-height')
-        ) || 70;
+        const targetTop = target.getBoundingClientRect().top + window.scrollY;
+        // An upward anchor scroll reveals the fixed header above the target.
+        const offset = nav && targetTop < window.scrollY ? nav.getBoundingClientRect().height : 0;
         window.scrollTo({
-          top: target.offsetTop - offset,
+          top: Math.max(0, targetTop - offset),
           behavior: 'smooth'
         });
       }

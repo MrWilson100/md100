@@ -165,14 +165,6 @@
   border-top-style: solid;
   overflow: hidden;
   padding-top: var(--space-xs);
-  max-height: 200px;
-  transition: max-height 0.4s ease, padding 0.4s ease, border-top-width 0.4s ease;
-}
-
-.ticker-bar.ticker-hidden {
-  max-height: 0;
-  padding-top: 0;
-  border-top-width: 0;
 }
 
 .ticker-row {
@@ -216,10 +208,8 @@
    NAVIGATION
    ============================================= */
 .nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  /* Normal flow is the fallback until the measured fixed header is ready. */
+  position: relative;
   z-index: 1000;
   height: auto;
   display: flex;
@@ -242,10 +232,23 @@
     0 -1px 0 0 rgba(0, 0, 0, 0.2) inset,
     0 4px 16px rgba(0, 0, 0, 0.35),
     0 1px 4px rgba(0, 41, 254, 0.1);
-  transition: background var(--transition-base),
-              border-color var(--transition-base),
-              box-shadow var(--transition-base),
-              transform var(--transition-base);
+}
+
+.nav.nav-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  /* Scroll deltas control this directly, with no timed transition or collapse. */
+  transform: translate3d(0, 0, 0);
+  transition: none;
+  will-change: transform;
+}
+
+.nav-spacer {
+  flex-shrink: 0;
+  pointer-events: none;
+  overflow-anchor: none;
 }
 
 @media (max-width: 768px) {
@@ -257,25 +260,6 @@
       rgba(6, 40, 80, 0.15) 100%
     );
   }
-  .nav.nav-hidden {
-    transform: translateY(-100%);
-  }
-}
-
-.nav-scrolled {
-  background: linear-gradient(
-    135deg,
-    rgba(4, 12, 40, 0.85) 0%,
-    rgba(0, 1, 24, 0.8) 50%,
-    rgba(6, 40, 80, 0.4) 100%
-  );
-  border-bottom-color: rgba(0, 41, 254, 0.35);
-  box-shadow:
-    0 1px 0 0 rgba(255, 255, 255, 0.07) inset,
-    0 -1px 0 0 rgba(0, 0, 0, 0.25) inset,
-    0 8px 32px rgba(0, 0, 0, 0.45),
-    0 2px 8px rgba(0, 41, 254, 0.2),
-    0 0 20px rgba(0, 41, 254, 0.08);
 }
 
 .nav-inner {
@@ -437,7 +421,7 @@
   height: 100%;
   background: var(--color-bg-secondary);
   border-left: 1px solid var(--color-border);
-  padding: calc(var(--nav-height) + var(--space-xl)) var(--space-xl) var(--space-xl);
+  padding: calc(var(--menu-header-height, 0px) + var(--space-xl)) var(--space-xl) var(--space-xl);
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
@@ -497,11 +481,6 @@
   .mobile-menu {
     display: block;
   }
-}
-
-/* Body padding to offset fixed nav (set dynamically by main.js) */
-body {
-  padding-top: var(--nav-height);
 }
 
 /* Prevent scroll when modal/menu is open */
